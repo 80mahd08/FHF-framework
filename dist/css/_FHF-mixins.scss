@@ -3,3 +3,8 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin max-width($value){
+    width: 100%;
+    max-width: $value;
+}
