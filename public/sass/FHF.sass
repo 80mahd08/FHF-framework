@@ -1,7 +1,9 @@
 
 @use 'tools/functions' as *
+@use 'tools/var' as *
 
 @import 'tools/norm'
+
 
 .centerPosition
     position: absolute
@@ -38,14 +40,18 @@
 .floatRight
     float: right
 
-.h1
-    font-size: 2em
-.h2
-    font-size: 1.5em
-
-.resP
-    line-height: 1.8
-    font-size: 22px
+.respH1
+    font-size: clamp(32px, 4vw, 48px)
+.respH2
+    font-size: clamp(24px, 3vw, 36px)
+.respH3
+    font-size: clamp(20px, 2.5vw, 30px)
+.respH4
+    font-size: clamp(20px, 2.5vw, 30px)
+.respH5
+    font-size: clamp(16px, 2vw, 20px)
+.respH6
+    font-size: clamp(14px, 1.5vw, 18px)
 
 .resImg
     width: 100%
@@ -74,6 +80,47 @@
     background-size: cover
     background-repeat: no-repeat
     background-position: center
+
+@each $color in $colors
+    .font#{firstLetterUpper($color)}
+        color: #{$color}
+    .bg#{firstLetterUpper($color)}
+        background-color: #{$color}
+    @for $i from 1 through 100
+        .border#{firstLetterUpper($color)}-#{$i}
+            border: #{$i+"px"} solid #{$color}
+
+@for $i from 1 through 100
+    .margin-#{$i}
+        margin:  #{$i + "px"}
+    .marginTop-#{$i}
+        margin-top: #{$i + "px"}
+    .marginBottom-#{$i}
+        margin-bottom: #{$i + "px"}
+    .marginRight-#{$i}
+        margin-right: #{$i + "px"}
+    .marginLeft-#{$i}
+        margin-left: #{$i + "px"}
+    .padding-#{$i} 
+        padding: #{$i + "px"}
+    .paddingTop-#{$i} 
+        padding-top: #{$i + "px"}
+    .paddingBottom-#{$i} 
+        padding-bottom: #{$i + "px"}
+    .paddingRight-#{$i} 
+        padding-right: #{$i + "px"}
+    .paddingLeft-#{$i} 
+        padding-left: #{$i + "px"}
+  
+
+.rounded
+    border-radius: 5px
+
+.respP
+    font-size: clamp(16px, 1.2vw, 20px)
+
+.transBg
+    background-color: transparent
 
 @import 'tools/_media.query'
 
