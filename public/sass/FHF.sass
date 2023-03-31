@@ -57,6 +57,16 @@
 .resImg
     width: 100%
 
+@for $i from 100 through 500
+    .respGridFill-#{$i}
+        display: grid
+        grid-template-columns: repeat(auto-fill , minmax(#{$i} + "px" , 1fr) )
+    .respGridFit-#{$i}
+        display: grid
+        grid-template-columns: repeat(auto-fit , minmax(#{$i} + "px" , 1fr) )
+
+
+
 .unstyledList
     list-style: none
     margin: 0
