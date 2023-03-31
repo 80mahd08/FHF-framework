@@ -122,8 +122,34 @@
         padding-right: #{$i + "px"}
     .paddingLeft-#{$i} 
         padding-left: #{$i + "px"}
+    @for $j from 1 through 100
+        .respMargin-#{$i}-#{$j}
+            margin: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMarginTop-#{$i}-#{$j}
+            margin-top: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMarginBottom-#{$i}-#{$j}
+            margin-bottom: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMarginRight-#{$i}-#{$j}
+            margin-right: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMarginLeft-#{$i}-#{$j}
+            margin-left: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPadding-#{$i}-#{$j}
+            padding: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPaddingTop-#{$i}-#{$j}
+            padding-top: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPaddingBottom-#{$i}-#{$j}
+            padding-bottom: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPaddingRight-#{$i}-#{$j}
+            padding-right: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPaddingLeft-#{$i}-#{$j}
+            padding-left: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+.marginNone
+    margin: 0
+.paddingNone
+    padding: 0
+.margCenter
+    margin: 0 auto
   
-
 .rounded
     border-radius: 5px
 
