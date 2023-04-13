@@ -175,21 +175,20 @@ $borderRadiusCont: 5
         border-radius: #{$borderRadiusCont}px
     $borderRadiusCont: $borderRadiusCont + 20
 
-@for $i from $minWidth through $maxWidth
-  $percent: math.div(($i - $minWidth), ($maxWidth - $minWidth))
-  $width: "width: calc(#{$i}px + #{$percent * (100vw - #{$maxWidth}px)})"
-  $height: "height: calc(#{$i}px + #{$percent * (100vh - #{$maxWidth}px)})"
+@for $i from $minWidth to $maxWidth 
+    $percent: ($i - $minWidth) / ($maxWidth - $minWidth) * 100%
+    $width: calc(#{$i}px + #{$percent} * (100vw - #{$maxWidth}px))
+    $height: calc(#{$i}px + #{$percent} * (100vh - #{$maxWidth}px))
 
-  .respWi-#{$i} 
-    #{$width}
+    .respWi-#{$i} 
+        width: $width
+    
+
+    .respHe-#{$i} 
+        height: $height
   
 
-  .respHe-#{$i} 
-    #{$height}
-  
 
-
-This code uses the math.div() function to perform the division inside the loop, and also wraps the resulting width and height values inside a string and uses the #{$} syntax to interpolate variables inside the calc() function.
 
 .flex
     display: flex
