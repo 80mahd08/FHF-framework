@@ -4,7 +4,6 @@
 
 @import 'tools/norm'
 
-
 .centerPosition
     position: absolute
     left: 50%
@@ -13,6 +12,12 @@
 
 .textCenter
     text-align: center
+.textLeft
+    text-align: left
+.textRight
+    text-align: right
+
+
 
 .clearFix
     &::after , &::before
@@ -21,12 +26,18 @@
     &::after
         clear: both
     *zoom: 1
-    
+
 .container
     margin: auto
-    padding: 
+    padding:
         left: 15px
         right: 15px
+
+.flex-container
+    display: flex
+    flex-wrap: wrap
+    .flex-item
+        flex: 1 0 300px
 
 .visibleXs,
 .visibleSm,
@@ -55,7 +66,11 @@
 .respP
     font-size: clamp(16px, 1.2vw, 20px)
 .resImg
-    width: 100%
+    max-width: 100%
+    height: auto
+.resVideo
+    max-width: 100%
+    height: auto
 
 @for $i from 100 through 500
     .respGridFill-#{$i}
@@ -64,8 +79,6 @@
     .respGridFit-#{$i}
         display: grid
         grid-template-columns: repeat(auto-fit , minmax(#{$i} + "px" , 1fr) )
-
-
 
 .unstyledList
     list-style: none
@@ -103,7 +116,7 @@
 
 @for $i from 1 through 100
     .margin-#{$i}
-        margin:  #{$i + "px"}
+        margin: #{$i + "px"}
     .marginTop-#{$i}
         margin-top: #{$i + "px"}
     .marginBottom-#{$i}
@@ -112,15 +125,15 @@
         margin-right: #{$i + "px"}
     .marginLeft-#{$i}
         margin-left: #{$i + "px"}
-    .padding-#{$i} 
+    .padding-#{$i}
         padding: #{$i + "px"}
-    .paddingTop-#{$i} 
+    .paddingTop-#{$i}
         padding-top: #{$i + "px"}
-    .paddingBottom-#{$i} 
+    .paddingBottom-#{$i}
         padding-bottom: #{$i + "px"}
-    .paddingRight-#{$i} 
+    .paddingRight-#{$i}
         padding-right: #{$i + "px"}
-    .paddingLeft-#{$i} 
+    .paddingLeft-#{$i}
         padding-left: #{$i + "px"}
     @for $j from 1 through 100
         .respMargin-#{$i}-#{$j}
@@ -149,16 +162,25 @@
     padding: 0
 .margCenter
     margin: 0 auto
-  
-.rounded
-    border-radius: 5px
 
-.btnRounded
-    border-radius: 20px
+@each $style in $textDecorationStyles
+    .textDeco-#{$style}
+        text-decoration: $style
+
+@each $style in $textTransformStyles
+    .textTrans-#{$style}
+        text-transform: $style
+
+$borderRadiusCont: 5
+@each $borderRName in $BordeRadiusNames
+    .#{$borderRName}
+        border-radius: #{$borderRadiusCont}px
+    $borderRadiusCont: $borderRadiusCont + 20
+
+.flex
+    display: flex
 
 .transBg
     background-color: transparent
 
 @import 'tools/_media.query'
-
-
