@@ -2,7 +2,7 @@
   "main": "dist/main.min.css",
   "style": "dist/main.min.css",
   "name": "fhf",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "This is a CSS file called 'fhf.css', which was created by Mahdi Amari. It sets a number of CSS rules that correct browser inconsistencies and ensure consistent rendering across different browsers. The rules are organized by sections of the HTML document, such as \"Sections,\" \"Grouping content,\" \"Text-level semantics,\" \"Embedded content,\" and \"Forms.\" Examples of rules include setting the box-sizing property to border-box for all elements, removing margins for the body element, and setting font sizes and margins for h1 elements within section and article contexts. There are also rules for images, forms, and text-level semantics like links and emphasis.",
   "scripts": {
   },
