@@ -1,0 +1,348 @@
+@use "../tools/_var" as *
+@use "../tools/_functions" as *
+
+@each $color in $colors
+    .font#{firstLetterUpper($color)}
+        color: #{$color}
+    .bg#{firstLetterUpper($color)}
+        background-color: #{$color}
+    @for $i from 1 through 100
+        .border#{firstLetterUpper($color)}-#{$i}
+            border: #{$i+"px"} solid #{$color}
+.transBg
+    background-color: transparent
+
+$borderRadiusCont: 5
+@each $borderRName in $BordeRadiusNames
+    .#{$borderRName}
+        border-radius: #{$borderRadiusCont}px
+    $borderRadiusCont: $borderRadiusCont + 20
+
+.commonBtn 
+    display: inline-block
+    padding: 10px 20px
+    font-size: 16px
+    text-align: center
+    text-decoration: none
+    cursor: pointer
+
+
+.successBtn 
+    @extend .commonBtn
+    background-color: #4CAF50
+    color: #fff
+
+
+.errorBtn 
+    @extend .commonBtn
+    background-color: #FF5733
+    color: #fff
+
+
+.warningBtn 
+    @extend .commonBtn
+    background-color: #FFC300
+    color: #fff
+
+
+.infoBtn 
+    @extend .commonBtn
+    background-color: #3498DB
+    color: #fff
+
+
+.alertBox 
+    padding: 15px
+    margin: 15px 0
+    border: 1px solid #ccc
+    border-radius: 4px
+
+
+.successAlert 
+    @extend .alertBox
+    background-color: #D4EDDA
+    color: #155724
+
+
+.errorAlert 
+    @extend .alertBox
+    background-color: #F8D7DA
+    color: #721C24
+
+
+.warningAlert 
+    @extend .alertBox
+    background-color: #FFF3CD
+    color: #856404
+
+
+.infoAlert 
+    @extend .alertBox
+    background-color: #D1ECF1
+    color: #0C5460
+
+
+.primaryText 
+    color: #007BFF 
+.secondaryText 
+    color: #6C757D 
+.accentText 
+    color: #FFC107 
+.linkText 
+    color: #007BFF 
+    text-decoration: underline 
+    cursor: pointer 
+.primaryBg 
+    background-color: #007BFF 
+    color: #fff 
+.secondaryBg 
+    background-color: #6C757D 
+    color: #fff 
+.accentBg 
+    background-color: #FFC107 
+    color: #333 
+
+.textMuted 
+    color: #6C757D
+
+.shadow 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+
+.rainbowText 
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red)
+    color: transparent
+    -webkit-background-clip: text
+    background-clip: text
+.sparkleEffect 
+    position: relative 
+    display: inline-block 
+    overflow: hidden 
+    &::before 
+        content: '✨' 
+        position: absolute 
+        top: 0 
+        left: 0 
+        color: #ffd700 
+        transform: scale(0) 
+        animation: sparkleAnimation 1.5s infinite linear 
+
+@keyframes sparkleAnimation 
+    0% 
+        transform: scale(0) 
+    50% 
+        transform: scale(1) 
+    100% 
+        transform: scale(0) 
+.fancyBorder 
+    border: 2px solid #3498DB 
+    border-radius: 12px 
+    padding: 10px 
+    position: relative 
+    &::before 
+        content: '' 
+        position: absolute 
+        top: 0 
+        left: 0 
+        right: 0 
+        bottom: 0 
+        border: 1px dashed #3498DB 
+        border-radius: 10px 
+        pointer-events: none 
+
+.smallBoxShadow 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+.boxShadow
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+
+.largeBoxShadow
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3)
+
+.extraLargeBoxShadow
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4)
+
+.bgDarkGray
+    background-color: #333
+
+.bgLightGray
+    background-color: #eee
+
+.gradientPrimary
+    background: linear-gradient(to right, #007BFF, #3498DB)
+
+.gradientSecondary
+    background: linear-gradient(to right, #6C757D, #FFC107)
+
+.gradientAccent
+    background: linear-gradient(to right, #FFC107, #333)
+
+.gradientSuccess
+    background: linear-gradient(to right, #4CAF50, #D4EDDA)
+
+.gradientError
+    background: linear-gradient(to right, #FF5733, #F8D7DA)
+
+.gradientWarning
+    background: linear-gradient(to right, #FFC300, #FFF3CD)
+
+.gradientInfo
+    background: linear-gradient(to right, #3498DB, #D1ECF1)
+
+.gradientAlert
+    background: linear-gradient(to right, #FF5733, #F8D7DA)
+
+.gradientDark
+    background: linear-gradient(to right, #333, #666)
+    
+.gradientLight
+    background: linear-gradient(to right, #eee, #fff)
+    
+.gradientExtraLight
+    background: linear-gradient(to right, #f3f3f3, #fff)
+    
+.gradientExtraDark
+    background: linear-gradient(to right, #333, #000)
+    
+.gradientBlack
+    background: linear-gradient(to right, #000, #333)
+    
+.gradientWhite
+    background: linear-gradient(to right, #fff, #f3f3f3)
+    
+.gradientGrey
+    background: linear-gradient(to right, #666, #999)
+    
+.gradientBlackWhite
+    background: linear-gradient(to right, #000, #fff)
+    
+.gradientWhiteBlack
+    background: linear-gradient(to right, #fff, #000)
+    
+.gradientGreyBlack
+    background: linear-gradient(to right, #666, #000)
+    
+.gradientBlackGrey
+    background: linear-gradient(to right, #000, #666)
+    
+.gradientWhiteGrey
+    background: linear-gradient(to right, #fff, #666)
+    
+.gradientGreyWhite
+    background: linear-gradient(to right, #666, #fff)
+    
+.gradientBlackWhiteWhite
+    background: linear-gradient(to right, #000, #fff, #fff)
+    
+.gradientWhiteBlackWhite
+    background: linear-gradient(to right, #fff, #000, #fff)
+    
+.grayscaleImage
+    filter: grayscale(100%)
+
+.blurImage
+    filter: blur(5px)
+
+.complexShadow
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.4)
+
+
+.transitionBorderColor
+    transition: border-color 0.3s ease-in-out
+    &:hover
+        border-color: #FFC107
+
+
+.neonGlowText
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc
+
+.morphingButton
+    background-color: #3498DB
+    color: #fff
+    padding: 10px 20px
+    border-radius: 8px
+    cursor: pointer
+    transition: all 0.3s ease-in-out
+    &:hover
+        background-color: #FFC107
+
+.advancedHoverEffect
+    position: relative
+    overflow: hidden
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(45deg, #3498DB, #FFC107)
+        opacity: 0
+        transition: opacity 0.3s
+    &:hover
+        &:before
+            opacity: 1
+
+.slidingBgOverlay
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 0%
+        height: 100%
+        background: rgba(52, 152, 219, 0.8)
+        transition: width 0.3s
+    &:hover
+        &:before
+            width: 100%
+
+.animatedGradientBorder
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border: 2px solid transparent
+        background: linear-gradient(45deg, #3498DB, #FFC107, #28a745)
+        border-image: linear-gradient(45deg, #3498DB, #FFC107, #28a745)
+        border-image-slice: 1
+        transition: border 0.3s
+    &:hover
+        &:before
+            border: 2px solid #fff
+.cardFlip
+    perspective: 1000px
+    transform-style: preserve-3d
+    transition: transform 0.5s
+    &:hover
+        transform: rotateY(180deg)
+    .cardFront, .cardBack
+        width: 100%
+        height: 100%
+        position: absolute
+        backface-visibility: hidden
+    .cardFront
+        background: #3498DB
+    .cardBack
+        background: #28a745
+        transform: rotateY(180deg)
+
+.gradientUnderline
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 2px
+        background: linear-gradient(to right, #3498DB, #FFC107, #28a745)
+        visibility: hidden
+        transform: scaleX(0)
+        transition: all 0.3s ease-in-out
+    &:hover:before
+        visibility: visible
+        transform: scaleX(1)

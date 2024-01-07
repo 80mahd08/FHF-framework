@@ -1,6 +1,6 @@
 {
-  "main": "dist/js/FHF.js",
-  "style": "dist/css/FHF.min.css",
+  "main": "dist/main.min.css",
+  "style": "dist/main.min.css",
   "name": "fhf",
   "version": "1.2.1",
   "description": "This is a CSS file called 'fhf.css', which was created by Mahdi Amari. It sets a number of CSS rules that correct browser inconsistencies and ensure consistent rendering across different browsers. The rules are organized by sections of the HTML document, such as \"Sections,\" \"Grouping content,\" \"Text-level semantics,\" \"Embedded content,\" and \"Forms.\" Examples of rules include setting the box-sizing property to border-box for all elements, removing margins for the body element, and setting font sizes and margins for h1 elements within section and article contexts. There are also rules for images, forms, and text-level semantics like links and emphasis.",
@@ -8,31 +8,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
-    "dist/css/FHF.min.css",
-    "dist/js/FHF.js",
-    "dist/sass/_FHF-mixins.scss"
+    "dist/main.min.css"
   ],  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/80mahd08/FHF-framework.git"
   },
   "keywords": [
-    "CSS",
-    "reset",
-    "Normalize",
-    "CSS",
-    "Box-sizing",
-    "Typography",
-    "Forms",
-    "Responsive",
-    "design",
-    "Browser",
-    "compatibility",
-    "javascript",
     "css",
-    "html",
-    "module",
-    "awesome"
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
   ],
   "author": "Mahdi Amari",
   "license": "ISC",

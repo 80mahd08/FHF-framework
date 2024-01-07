@@ -1,0 +1,67 @@
+
+.container
+    margin: auto
+    padding:
+        left: 15px
+        right: 15px
+
+.flexContainer
+    display: flex
+    flex-wrap: wrap
+    .flexItem
+        flex: 1 0 300px
+
+@for $i from 100 through 500
+    .respGridFill-#{$i}
+        display: grid
+        grid-template-columns: repeat(auto-fill , minmax(#{$i} + "px" , 1fr) )
+    .respGridFit-#{$i}
+        display: grid
+        grid-template-columns: repeat(auto-fit , minmax(#{$i} + "px" , 1fr) )
+
+.floatLeft
+    float: left
+
+.floatRight
+    float: right
+
+.clearFix
+    &::after , &::before
+        content: " "
+        display: table
+    &::after
+        clear: both
+    *zoom: 1
+.visibleXs,
+.visibleSm,
+.visibleMd,
+.visibleLg
+    display: none
+
+.widthFull
+    width: 100%
+
+.widthAuto
+    width: auto
+
+.heightFull
+    height: 100%
+
+.heightAuto
+    height: auto
+
+.alignSelfCenter
+    align-self: center
+
+.alignSelfFlexEnd
+    align-self: flex-end
+
+.alignSelfStretch
+    align-self: stretch
+
+
+.responsiveColumns
+    column-count: 3
+    column-gap: 20px
+    @media (max-width: 767px)
+        column-count: 1
