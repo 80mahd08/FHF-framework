@@ -1,0 +1,428 @@
+@use  "../tools/_var" as *
+
+@for $i from 1 through 100
+    .m-#{$i}
+        margin: #{$i + "px"}
+    .mt-#{$i}
+        margin-top: #{$i + "px"}
+    .mb-#{$i}
+        margin-bottom: #{$i + "px"}
+    .mr-#{$i}
+        margin-right: #{$i + "px"}
+    .ml-#{$i}
+        margin-left: #{$i + "px"}
+    .p-#{$i}
+        padding: #{$i + "px"}
+    .pt-#{$i}
+        padding-top: #{$i + "px"}
+    .pb-#{$i}
+        padding-bottom: #{$i + "px"}
+    .pr-#{$i}
+        padding-right: #{$i + "px"}
+    .pl-#{$i}
+        padding-left: #{$i + "px"}
+    @for $j from 1 through 100
+        .respM-#{$i}-#{$j}
+            margin: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMt-#{$i}-#{$j}
+            margin-top: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMb-#{$i}-#{$j}
+            margin-bottom: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMr-#{$i}-#{$j}
+            margin-right: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respMl-#{$i}-#{$j}
+            margin-left: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respP#{$i}-#{$j}
+            padding: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPt-#{$i}-#{$j}
+            padding-top: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respP-#{$i}-#{$j}
+            padding-bottom: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPr-#{$i}-#{$j}
+            padding-right: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+        .respPl-#{$i}-#{$j}
+            padding-left: clamp(#{$i + "px"} , 5vw , #{$j + "px"})
+
+
+.margin-none
+    margin: 0
+
+.padding-none
+    padding: 0
+
+.marg-center
+    margin: 0 auto
+$borderRadiusCont: 5
+@each $borderRName in $BordeRadiusNames
+    .#{$borderRName}
+        border-radius: #{$borderRadiusCont}px
+    $borderRadiusCont: $borderRadiusCont + 20
+
+.flex
+    display: flex
+
+.res-backg-img
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+.unstyled-list
+    list-style: none
+    margin: 0
+    padding: 0
+
+.nav-style
+    display: flex
+    justify-content: space-between
+
+.center-content-flex
+    display: flex
+    justify-content: center
+    align-items: center
+
+.circle
+    border-radius: 50%
+
+.visible
+    display: block !important
+
+.invisible
+    display: none
+
+.res-img, .res-video
+    max-width: 100%
+    height: auto
+
+.center-content-flex
+    display: flex
+    justify-content: center
+    align-items: center
+
+.center-position
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+.card
+    border: 1px solid #ddd
+    border-radius: 8px
+    padding: 15px
+    margin: 15px 0
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+
+.fade-in
+    animation: fade-in 0.5s ease-in-out
+
+@keyframes fade-in
+    from
+        opacity: 0
+    to
+        opacity: 1
+
+.rounded-image
+    border-radius: 50%
+    overflow: hidden
+
+.fade-out
+    animation: fade-out 0.5s ease-in-out
+
+@keyframes fade-out
+    from
+        opacity: 1
+    to
+        opacity: 0
+
+.transition
+    transition: all 0.3s ease-in-out
+
+.cursor-pointer
+    cursor: pointer
+
+.hover-zoom
+    transition: transform 0.3s ease-in-out
+    &:hover
+        transform: scale(1.1)
+
+.vertical-line
+    border-left: 1px solid #ccc
+    height: 100%
+
+.horizontal-line
+    border-top: 1px solid #ccc
+    width: 100%
+
+.shake-animation
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both
+
+@keyframes shake
+    10%, 90%
+        transform: translate3d(-1px, 0, 0)
+    20%, 80%
+        transform: translate3d(2px, 0, 0)
+    30%, 50%, 70%
+        transform: translate3d(-4px, 0, 0)
+    40%, 60%
+        transform: translate3d(4px, 0, 0)
+
+.glowing-button
+    background-color: #28a745
+    color: #fff
+    padding: 10px 20px
+    font-size: 1.2em
+    border: none
+    border-radius: 8px
+    cursor: pointer
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.5)
+    transition: box-shadow 0.3s ease-in-out
+    &:hover
+        box-shadow: 0 0 40px rgba(40, 167, 69, 0.8)
+
+.rotate-effect
+    animation: rotate 3s linear infinite
+
+@keyframes rotate
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+.link-button
+    background-color: #007BFF
+    color: #fff
+    padding: 10px 20px
+    border: none
+    border-radius: 8px
+    text-decoration: none
+    display: inline-block
+    cursor: pointer
+    transition: background-color 0.3s ease-in-out
+    &:hover
+        background-color: #0056b3
+
+.heartbeat
+    font-size: 2em
+    color: #FF1493
+    animation: heartbeat-animation 1s infinite
+
+@keyframes heartbeat-animation
+    0%,
+    100%
+        transform: scale(1)
+    50%
+        transform: scale(1.2)
+
+.floating-shadow
+    position: relative
+    background-color: #3498DB
+    width: 150px
+    height: 150px
+    border-radius: 50%
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5)
+    animation: floating-shadow-animation 3s infinite alternate
+
+@keyframes floating-shadow-animation
+    to
+        transform: translateY(10px)
+        box-shadow: 0 0 30px rgba(52, 152, 219, 0.8)
+
+.bg-cover
+    background-size: cover
+
+.bg-contain
+    background-size: contain
+
+.flex-column
+    flex-direction: column
+
+.flex-column-reverse
+    flex-direction: column-reverse
+
+.flex-row-reverse
+    flex-direction: row-reverse
+
+.flex-wrap-reverse
+    flex-wrap: wrap-reverse
+
+.align-items-center
+    align-items: center
+
+.align-items-flex-end
+    align-items: flex-end
+
+.justify-content-center
+    justify-content: center
+
+.justify-content-flex-end
+    justify-content: flex-end
+
+.overflow-hidden
+    overflow: hidden
+
+.overflow-auto
+    overflow: auto
+
+.hover-opacity
+    transition: opacity 0.3s ease-in-out
+    &:hover
+        opacity: 0.8
+
+.rotate-90
+    transform: rotate(90deg)
+
+.scale-up
+    transform: scale(1.2)
+
+.skew-x-15
+    transform: skewX(15deg)
+
+.z-index-1
+    z-index: 1
+
+.z-index-10
+    z-index: 10
+
+.z-index-100
+    z-index: 100
+
+.cursor-not-allowed
+    cursor: not-allowed
+
+.cursor-crosshair
+    cursor: crosshair
+
+.cursor-grab
+    cursor: grab
+
+.opacity-50
+    opacity: 0.5
+
+.opacity-75
+    opacity: 0.75
+
+.opacity-90
+    opacity: 0.9
+
+.transition-fast
+    transition: all 0.2s ease-in-out
+
+.transition-slow
+    transition: all 0.5s ease-in-out
+
+.position-relative
+    position: relative
+
+.position-absolute
+    position: absolute
+
+.position-fixed
+    position: fixed
+
+.position-sticky
+    position: sticky
+
+.align-self-center
+    align-self: center
+
+.align-self-flex-end
+    align-self: flex-end
+
+.align-self-stretch
+    align-self: stretch
+
+.border-solid
+    border-style: solid
+
+.border-dotted
+    border-style: dotted
+
+.border-double
+    border-style: double
+
+.overflow-visible
+    overflow: visible
+
+.overflow-scroll
+    overflow: scroll
+
+.hover-pointer
+    cursor: pointer
+
+.hover-zoom-in
+    &:hover
+        transform: scale(1.1)
+
+.rotate-animation
+    animation: rotate 2s linear infinite
+
+@keyframes rotate-animation
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+.hover-fade
+    transition: opacity 0.5s ease-in-out
+    &:hover
+        opacity: 0.7
+
+.pulse-animation
+    animation: pulse 1s infinite
+
+@keyframes pulse
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.1)
+    100%
+        transform: scale(1)
+
+.parallax-effect
+    perspective: 1px
+    transform-style: preserve-3d
+    height: 100vh
+    overflow-x: hidden
+    overflow-y: auto
+    position: relative
+    transform: translateZ(-2px) scale(1.5)
+
+.threeD-button
+    position: relative
+    background: #3498DB
+    color: #fff
+    padding: 15px 30px
+    border-radius: 8px
+    overflow: hidden
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(45deg, #FFC107, #28a745)
+        transform: skewX(-20deg)
+        opacity: 0.5
+        transition: transform 0.3s, opacity 0.3s
+    &:hover
+        &:before
+            transform: skewX(-40deg)
+            opacity: 1
+
+.animated-border
+    position: relative
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 2px
+        background: linear-gradient(45deg, #3498DB, #FFC107, #28a745)
+        transform: scaleX(0)
+        transform-origin: right
+        transition: transform 0.3s
+    &:hover
+        &:before
+            transform: scaleX(1)
+            transform-origin: left
