@@ -1,9 +1,0 @@
-@function camel-case-str($str) 
-  $index: str-index($str, "-")
-  @if $index == null 
-    @return $str
-  
-  @return str-slice($str, 1, $index - 1) + to-upper-case(str-slice($str, $index + 1, $index + 1)) + str-slice($str, $index + 2)
-
-@function firstLetterUpper($str)
-  @return to-upper-case(str-slice($str , 1 , 1)) + str-slice($str , 2 , str-length($str) )
