@@ -1,0 +1,25 @@
+/* Base Utilities */
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+
+$borderRadiusCont: 5;
+@each $borderRName in $BordeRadiusNames {
+    .#{$borderRName} {
+        border-radius: $borderRadiusCont;
+    }
+    $borderRadiusCont: $borderRadiusCont + 20;
+}
+
+@for $i from 1 through 100 {
+    .w-#{$i} { 
+        width: percentage($number: calc($i / 100)) ; 
+    }
+    .h-#{$i} { 
+        height: percentage($number: calc($i / 100)) ; 
+    }
+}
+
+@for $i from 1 through 1000 {
+    .w-#{$i}px { width: #{$i}px }
+    .h-#{$i}px { height: #{$i}px }
+}

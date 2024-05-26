@@ -1,0 +1,122 @@
+/* Color Variables */
+$colors: (
+  red: (
+    100: #FFEBEE,
+    200: #FFCDD2,
+    300: #EF9A9A,
+    400: #E57373,
+    500: #EF5350,
+    600: #E53935,
+    700: #D32F2F,
+    800: #C62828,
+    900: #B71C1C
+  ),
+  blue: (
+    100: #E3F2FD,
+    200: #BBDEFB,
+    300: #90CAF9,
+    400: #64B5F6,
+    500: #42A5F5,
+    600: #2196F3,
+    700: #1E88E5,
+    800: #1976D2,
+    900: #1565C0
+  ),
+  green: (
+    100: #E8F5E9,
+    200: #C8E6C9,
+    300: #A5D6A7,
+    400: #81C784,
+    500: #4CAF50,
+    600: #43A047,
+    700: #388E3C,
+    800: #2E7D32,
+    900: #1B5E20
+  ),
+  purple: (
+    100: #F3E5F5,
+    200: #E1BEE7,
+    300: #CE93D8,
+    400: #BA68C8,
+    500: #9C27B0,
+    600: #8E24AA,
+    700: #7B1FA2,
+    800: #6A1B9A,
+    900: #4A148C
+  ),
+  yellow: (
+    100: #FFFDE7,
+    200: #FFF9C4,
+    300: #FFF59D,
+    400: #FFF176,
+    500: #FFEE58,
+    600: #FDD835,
+    700: #FBC02D,
+    800: #F9A825,
+    900: #F57F17
+  ),
+  orange: (
+    100: #FFF3E0,
+    200: #FFE0B2,
+    300: #FFCC80,
+    400: #FFB74D,
+    500: #FFA726,
+    600: #FB8C00,
+    700: #F57C00,
+    800: #EF6C00,
+    900: #E65100
+  ),
+  teal: (
+    100: #E0F2F1,
+    200: #B2DFDB,
+    300: #80CBC4,
+    400: #4DB6AC,
+    500: #26A69A,
+    600: #009688,
+    700: #00897B,
+    800: #00796B,
+    900: #00695C
+  ),
+  pink: (
+    100: #FCE4EC,
+    200: #F8BBD0,
+    300: #F48FB1,
+    400: #F06292,
+    500: #EC407A,
+    600: #E91E63,
+    700: #D81B60,
+    800: #C2185B,
+    900: #AD1457
+  ),
+  indigo: (
+    100: #E8EAF6,
+    200: #C5CAE9,
+    300: #9FA8DA,
+    400: #7986CB,
+    500: #5C6BC0,
+    600: #3F51B5,
+    700: #3949AB,
+    800: #303F9F,
+    900: #283593
+  ),
+  cyan: (
+    100: #E0F7FA,
+    200: #B2EBF2,
+    300: #80DEEA,
+    400: #4DD0E1,
+    500: #26C6DA,
+    600: #00BCD4,
+    700: #00ACC1,
+    800: #0097A7,
+    900: #00838F
+  ),
+);
+
+/* Loop through colors */
+@each $color-name, $color-map in $colors {
+  @each $shade, $value in $color-map {
+    .text-#{$color-name}-#{$shade} { color: $value; }
+    .bg-#{$color-name}-#{$shade} { background-color: $value; }
+    .b-#{$color-name}-#{$shade} { border-color: $value; }
+  }
+}

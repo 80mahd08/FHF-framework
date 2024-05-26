@@ -1,0 +1,18 @@
+@use "../tools/_variables" as *;
+@use "../tools/_mixins" as *;
+
+.btn-success {
+    @include button-style($success-color);
+}
+
+.btn-error {
+    @include button-style($danger-color);
+}
+
+.btn-warning {
+    @include button-style($warning-color);
+}
+
+.btn-info {
+    @include button-style($info-color);
+}
