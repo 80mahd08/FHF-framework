@@ -4,22 +4,48 @@
 
 $borderRadiusCont: 5;
 @each $borderRName in $BordeRadiusNames {
-    .#{$borderRName} {
-        border-radius: $borderRadiusCont;
-    }
-    $borderRadiusCont: $borderRadiusCont + 20;
+	.#{$borderRName} {
+		border-radius: $borderRadiusCont;
+	}
+	$borderRadiusCont: $borderRadiusCont + 20;
 }
 
 @for $i from 1 through 100 {
-    .w-#{$i} { 
-        width: percentage($number: calc($i / 100)) ; 
-    }
-    .h-#{$i} { 
-        height: percentage($number: calc($i / 100)) ; 
-    }
+	.w-#{$i} {
+		width: percentage($number: calc($i / 100));
+	}
+	.h-#{$i} {
+		height: percentage($number: calc($i / 100));
+	}
 }
 
 @for $i from 1 through 1000 {
-    .w-#{$i}px { width: #{$i}px }
-    .h-#{$i}px { height: #{$i}px }
+	.w-#{$i}px {
+		width: #{$i}px;
+	}
+	.h-#{$i}px {
+		height: #{$i}px;
+	}
+}
+
+/* Z-index */
+
+.z-index-0 {
+	z-index: 0;
+}
+
+.z-index-10 {
+	z-index: 10;
+}
+
+.z-index-20 {
+	z-index: 20;
+}
+
+.z-index-30 {
+	z-index: 30;
+}
+
+.z-index-auto {
+	z-index: auto;
 }
