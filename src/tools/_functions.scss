@@ -36,12 +36,8 @@
 	$name: str-replace($name, ")", "-");
 	$name: str-replace($name, " ", "-");
 
-	@debug "rep  :#{$name}";
-
 	// Convert to lowercase
 	$name: string.to-lower-case($name);
-
-	@debug "to-lower-case :#{$name}";
 
 	@return $name;
 }
