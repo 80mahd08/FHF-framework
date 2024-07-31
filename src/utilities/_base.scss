@@ -112,3 +112,43 @@ $borderRadiusCont: 5;
 		}
 	}
 }
+
+.object-contain {
+	object-fit: contain;
+}
+
+.object-cover {
+	object-fit: cover;
+}
+
+.object-fill {
+	object-fit: fill;
+}
+
+.object-none {
+	object-fit: none;
+}
+
+.object-scale-down {
+	object-fit: scale-down;
+}
+
+@for $i from 1 through 20 {
+	.tp-#{$i} {
+		top: 0.5rem * $i;
+	}
+	.rh-#{$i} {
+		right: 0.5rem * $i;
+	}
+	.bt-#{$i} {
+		bottom: 0.5rem * $i;
+	}
+	.lf-#{$i} {
+		left: 0.5rem * $i;
+	}
+}
+
+.list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}

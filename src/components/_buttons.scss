@@ -1,18 +1,58 @@
-@use "../tools/_variables" as *;
-@use "../tools/_mixins" as *;
+/* Buttons */
 
-.btn-success {
-    @include button-style($success-color);
+[role="button"] {
+	cursor: pointer;
 }
 
-.btn-error {
-    @include button-style($danger-color);
+.btn {
+	cursor: pointer;
+	padding: 1rem;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #0d6efd;
+	border-color: #0d6efd;
+}
+
+.btn-secondary {
+	color: #fff;
+	background-color: #6c757d;
+	border-color: #6c757d;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #198754;
+	border-color: #198754;
+}
+
+.btn-danger {
+	color: #fff;
+	background-color: #dc3545;
+	border-color: #dc3545;
 }
 
 .btn-warning {
-    @include button-style($warning-color);
+	color: #000;
+	background-color: #ffc107;
+	border-color: #ffc107;
 }
 
 .btn-info {
-    @include button-style($info-color);
+	color: #000;
+	background-color: #0dcaf0;
+	border-color: #0dcaf0;
+}
+
+.btn-light {
+	color: #000;
+	background-color: #f8f9fa;
+	border-color: #f8f9fa;
+}
+
+.btn-dark {
+	color: #fff;
+	background-color: #212529;
+	border-color: #212529;
 }

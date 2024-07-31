@@ -28,15 +28,15 @@
 }
 
 // Text Horizontal Alignments
-.textA-center {
+.text-center {
 	text-align: center;
 }
 
-.textA-left {
+.text-left {
 	text-align: left;
 }
 
-.textA-right {
+.text-right {
 	text-align: right;
 }
 
@@ -82,72 +82,105 @@
 }
 
 // Font Weights
-.fontW-100 {
+.fw-100 {
 	font-weight: 100;
 }
 
-.fontW-200 {
+.fw-200 {
 	font-weight: 200;
 }
 
-.fontW-300 {
+.fw-300 {
 	font-weight: 300;
 }
 
-.fontW-400 {
+.fw-400 {
 	font-weight: 400;
 }
 
-.fontW-500 {
+.fw-500 {
 	font-weight: 500;
 }
 
-.fontW-600 {
+.fw-600 {
 	font-weight: 600;
 }
 
-.fontW-700 {
+.fw-700 {
 	font-weight: 700;
 }
 
-.fontW-800 {
+.fw-800 {
 	font-weight: 800;
 }
 
-.fontW-900 {
+.fw-900 {
 	font-weight: 900;
 }
 
 // Text Transformations
-.textT-none {
+.text-none {
 	text-transform: none;
 }
 
-.textT-capitalize {
+.text-capitalize {
 	text-transform: capitalize;
 }
 
-.textT-uppercase {
+.text-uppercase {
 	text-transform: uppercase;
 }
 
-.textT-lowercase {
+.text-lowercase {
 	text-transform: lowercase;
 }
 
 // Text Decorations
-.textD-none {
+.text-none {
 	text-decoration: none;
 }
 
-.textD-underline {
+.text-underline {
 	text-decoration: underline;
 }
 
-.textD-line-through {
+.text-line-through {
 	text-decoration: line-through;
 }
 
-.textD-overline {
+.text-overline {
 	text-decoration: overline;
+}
+
+/* Word Break */
+
+.wb-normal {
+	word-wrap: normal;
+}
+
+.wb-words {
+	overflow-wrap: break-word;
+}
+
+.wb-all {
+	word-wrap: break-all;
+}
+.whitespace-normal {
+	white-space: normal;
+}
+
+.whitespace-nowrap {
+	white-space: nowrap;
+}
+
+.whitespace-pre {
+	white-space: pre;
+}
+
+.whitespace-pre-line {
+	white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+	white-space: pre-wrap;
 }
