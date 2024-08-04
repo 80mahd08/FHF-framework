@@ -2,16 +2,15 @@
 	"main": "dist/main.min.css",
 	"style": "dist/main.min.css",
 	"name": "fhf",
-	"version": "1.6.0",
-	"description": "This is a CSS file called 'fhf.css', which was created by Mahdi Amari. It sets a number of CSS rules that correct browser inconsistencies and ensure consistent rendering across different browsers. The rules are organized by sections of the HTML document, such as \"Sections,\" \"Grouping content,\" \"Text-level semantics,\" \"Embedded content,\" and \"Forms.\" Examples of rules include setting the box-sizing property to border-box for all elements, removing margins for the body element, and setting font sizes and margins for h1 elements within section and article contexts. There are also rules for images, forms, and text-level semantics like links and emphasis.",
+	"version": "1.6.1",
+	"description": "This is a CSS framework called 'fhf, which was created by Mahdi Amari. It sets a number of CSS rules that correct browser inconsistencies and ensure consistent rendering across different browsers. The rules are organized by sections of the HTML document, such as \"Sections,\" \"Grouping content,\" \"Text-level semantics,\" \"Embedded content,\" and \"Forms.\" Examples of rules include setting the box-sizing property to border-box for all elements, removing margins for the body element, and setting font sizes and margins for h1 elements within section and article contexts. There are also rules for images, forms, and text-level semantics like links and emphasis.",
 	"scripts": {},
 	"files": [
-		"dist/main.min.css",
-		"dist/base.min.css",
-		"dist/colors.min.css",
-		"dist/layout.min.css",
-		"dist/norm.min.css",
-		"dist/typography.min.css"
+		"dist/base.css",
+		"dist/colors.css",
+		"dist/layout.css",
+		"dist/normalize.css",
+		"dist/typography.css"
 	],
 	"repository": {
 		"type": "git",
