@@ -2,11 +2,10 @@
 @use "./tools/_functions" as *;
 @use "./tools/_variables" as *;
 
-@import "./utilities/_normalize";
-@import "./utilities/_base";
-@import "./utilities/_layout";
-@import "./utilities/_colors";
-@import "./utilities/_typography";
+@import "./utilities/normalize";
+@import "./utilities/base";
+@import "./utilities/layout";
+@import "./utilities/colors";
+@import "./utilities/typography";
 
 @import "./components/_buttons";
-
