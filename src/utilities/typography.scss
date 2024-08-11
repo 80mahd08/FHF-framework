@@ -28,56 +28,56 @@
 }
 
 // Text Horizontal Alignments
-.text-center {
+.textH-center {
 	text-align: center;
 }
 
-.text-left {
+.textH-left {
 	text-align: left;
 }
 
-.text-right {
+.textH-right {
 	text-align: right;
 }
 
 // Text Vertical Alignments
-.VA-center {
+.textV-center {
 	vertical-align: center;
 }
 
-.VA-auto {
+.textV-auto {
 	vertical-align: auto;
 }
 
-.VA-baseline {
+.textV-baseline {
 	vertical-align: baseline;
 }
 
-.VA-bottom {
+.textV-bottom {
 	vertical-align: bottom;
 }
 
-.VA-middle {
+.textV-middle {
 	vertical-align: middle;
 }
 
-.VA-sub {
+.textV-sub {
 	vertical-align: sub;
 }
 
-.VA-super {
+.textV-super {
 	vertical-align: super;
 }
 
-.VA-text-bottom {
+.textV-text-bottom {
 	vertical-align: text-bottom;
 }
 
-.VA-text-top {
+.textV-text-top {
 	vertical-align: text-top;
 }
 
-.VA-top {
+.textV-top {
 	vertical-align: top;
 }
 
@@ -119,36 +119,36 @@
 }
 
 // Text Transformations
-.text-none {
+.textT-none {
 	text-transform: none;
 }
 
-.text-capitalize {
+.textT-capitalize {
 	text-transform: capitalize;
 }
 
-.text-uppercase {
+.textT-uppercase {
 	text-transform: uppercase;
 }
 
-.text-lowercase {
+.textT-lowercase {
 	text-transform: lowercase;
 }
 
 // Text Decorations
-.text-none {
+.textD-none {
 	text-decoration: none;
 }
 
-.text-underline {
+.textD-underline {
 	text-decoration: underline;
 }
 
-.text-line-through {
+.textD-line-through {
 	text-decoration: line-through;
 }
 
-.text-overline {
+.textD-overline {
 	text-decoration: overline;
 }
 
@@ -165,6 +165,9 @@
 .wb-all {
 	word-wrap: break-all;
 }
+
+/* Text Indentation */
+
 .whitespace-normal {
 	white-space: normal;
 }

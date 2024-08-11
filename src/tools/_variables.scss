@@ -1,15 +1,6 @@
-/* Variables */
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-$success-color: #4caf50;
-$danger-color: #ff5733;
-$warning-color: #ffc300;
-$info-color: #3498db;
-$light-color: #f8f9fa;
-$dark-color: #343a40;
+@use "sass:map";
 
 $border-radius: 4px;
 
-@use "sass:map";
 $BordeRadiusNames: ("small", "medium", "large");
 
