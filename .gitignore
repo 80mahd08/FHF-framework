@@ -4,6 +4,8 @@
 
 tjcss.scss
 
+*.docx
+
 dist
 =======
 tjcss.scss

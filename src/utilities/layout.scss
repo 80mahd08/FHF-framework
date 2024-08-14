@@ -3,128 +3,62 @@
 
 /* Layout Utilities */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
 
-    // Apply styles for large screens
-    @include respond-to(large) {
-        max-width: 1000px;
-    }
+	// Apply styles for large screens
+	@include respond-to(large) {
+		max-width: 1000px;
+	}
 
-    // Apply styles for medium screens
-    @include respond-to(medium) {
-        max-width: 800px;
-        padding: 15px;
-    }
+	// Apply styles for medium screens
+	@include respond-to(medium) {
+		max-width: 800px;
+		padding: 15px;
+	}
 
-    // Apply styles for small screens
-    @include respond-to(small) {
-        max-width: 100%;
-        padding: 10px;
-    }
-}
-/* Flex Container with Normalized Flex Properties */
-.flex-container {
-    display: -webkit-box; /* Old versions of iOS Safari and other WebKit browsers */
-    display: -ms-flexbox; /* IE 10 */
-    display: -webkit-flex; /* Safari 6.1+ */
-    display: flex; /* Modern browsers */
-
-    flex-wrap: wrap;
-
-    /* Flex properties */
-    -webkit-box-orient: horizontal; /* WebKit box model */
-    -webkit-box-direction: normal; /* WebKit box model */
-    -ms-flex-direction: row; /* IE 10 */
-    -webkit-flex-direction: row; /* Modern browsers */
-    flex-direction: row; /* Modern browsers */
-
-    -webkit-box-pack: start; /* WebKit box model */
-    -ms-flex-pack: start; /* IE 10 */
-    -webkit-justify-content: flex-start; /* Modern browsers */
-    justify-content: flex-start; /* Modern browsers */
-
-    -webkit-box-align: stretch; /* WebKit box model */
-    -ms-flex-align: stretch; /* IE 10 */
-    -webkit-align-items: stretch; /* Modern browsers */
-    align-items: stretch; /* Modern browsers */
-
-    -webkit-flex-wrap: wrap; /* Modern browsers */
-    -ms-flex-wrap: wrap; /* IE 10 */
-    flex-wrap: wrap; /* Modern browsers */
-
-    /* Ensure flex items are responsive */
-    .flex-item {
-        flex: 1 0 300px;
-        box-sizing: border-box;
-    }
-}
-
-/* General Flex Class */
-.flex {
-    display: -webkit-box; /* Old versions of iOS Safari and other WebKit browsers */
-    display: -ms-flexbox; /* IE 10 */
-    display: -webkit-flex; /* Safari 6.1+ */
-    display: flex; /* Modern browsers */
-
-    /* Flex properties */
-    -webkit-box-orient: horizontal; /* WebKit box model */
-    -webkit-box-direction: normal; /* WebKit box model */
-    -ms-flex-direction: row; /* IE 10 */
-    -webkit-flex-direction: row; /* Modern browsers */
-    flex-direction: row; /* Modern browsers */
-
-    -webkit-box-pack: start; /* WebKit box model */
-    -ms-flex-pack: start; /* IE 10 */
-    -webkit-justify-content: flex-start; /* Modern browsers */
-    justify-content: flex-start; /* Modern browsers */
-
-    -webkit-box-align: stretch; /* WebKit box model */
-    -ms-flex-align: stretch; /* IE 10 */
-    -webkit-align-items: stretch; /* Modern browsers */
-    align-items: stretch; /* Modern browsers */
-
-    -webkit-flex-wrap: nowrap; /* Modern browsers */
-    -ms-flex-wrap: nowrap; /* IE 10 */
-    flex-wrap: nowrap; /* Modern browsers */
+	// Apply styles for small screens
+	@include respond-to(small) {
+		max-width: 100%;
+		padding: 10px;
+	}
 }
 
 /* Responsive Grid Utilities */
 @for $i from 100 through 500 {
-    .respGridFill-#{$i} {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(#{$i}px, 1fr));
-    }
-    .respGridFit-#{$i} {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(#{$i}px, 1fr));
-    }
+	.respGridFill-#{$i} {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(#{$i}px, 1fr));
+	}
+	.respGridFit-#{$i} {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(#{$i}px, 1fr));
+	}
 }
 
 /* Floats */
 .float-left {
-    float: left;
+	float: left;
 }
 
 .float-right {
-    float: right;
+	float: right;
 }
 
 /* Clearfix */
 .clear-fix {
-    &:after,
-    &:before {
-        content: " ";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
-    *zoom: 1; /* IE 6/7 */
+	&:after,
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	*zoom: 1; /* IE 6/7 */
 }
-
 
 /* Display */
 .d-block {
@@ -139,126 +73,19 @@
 	display: inline;
 }
 
-.d-flex {
-	display: flex;
-}
-
 .d-none {
 	display: none;
 }
 
 // Loop for gap utilities
 @each $key, $value in $gap-values {
-    .gap-#{$key} {
-      gap: $value;
-    }
-    .gap-x-#{$key} {
-      column-gap: $value;
-    }
-    .gap-y-#{$key} {
-      row-gap: $value;
-    }
-  }
-  
-/* Width and Height Utilities */
-@for $i from 1 through 100 {
-	.w-#{$i} {
-		width: percentage($number: calc($i / 100));
+	.gap-#{$key} {
+		gap: $value;
 	}
-	.h-#{$i} {
-		height: percentage($number: calc($i / 100));
+	.gap-x-#{$key} {
+		column-gap: $value;
 	}
-}
-
-@for $i from 1 through 1000 {
-	.w-#{$i}px {
-		width: #{$i}px;
+	.gap-y-#{$key} {
+		row-gap: $value;
 	}
-	.h-#{$i}px {
-		height: #{$i}px;
-	}
-}
-
-
-/* Margins and Paddings */
-@for $i from 1 through 20 {
-	.mt-#{$i} {
-		margin-top: 0.5rem * $i;
-	}
-	.mr-#{$i} {
-		margin-right: 0.5rem * $i;
-	}
-	.mb-#{$i} {
-		margin-bottom: 0.5rem * $i;
-	}
-	.ml-#{$i} {
-		margin-left: 0.5rem * $i;
-	}
-	.pt-#{$i} {
-		padding-top: 0.5rem * $i;
-	}
-	.pr-#{$i} {
-		padding-right: 0.5rem * $i;
-	}
-	.pb-#{$i} {
-		padding-bottom: 0.5rem * $i;
-	}
-	.pl-#{$i} {
-		padding-left: 0.5rem * $i;
-	}
-}
-
-@for $i from 1 through 20 {
-	@for $j from 1 through 20 {
-		.resp-m-#{$i}-#{$j} {
-			@include responsiveMP(m, $i, $j);
-		}
-		.resp-mt-#{$i}-#{$j} {
-			@include responsiveMP(mt, $i, $j);
-		}
-		.resp-mb-#{$i}-#{$j} {
-			@include responsiveMP(mb, $i, $j);
-		}
-		.resp-mr-#{$i}-#{$j} {
-			@include responsiveMP(mr, $i, $j);
-		}
-		.resp-ml-#{$i}-#{$j} {
-			@include responsiveMP(ml, $i, $j);
-		}
-		.resp-p-#{$i}-#{$j} {
-			@include responsiveMP(p, $i, $j);
-		}
-		.resp-pt-#{$i}-#{$j} {
-			@include responsiveMP(pt, $i, $j);
-		}
-		.resp-pb-#{$i}-#{$j} {
-			@include responsiveMP(pb, $i, $j);
-		}
-		.resp-pl-#{$i}-#{$j} {
-			@include responsiveMP(pl, $i, $j);
-		}
-		.resp-pr-#{$i}-#{$j} {
-			@include responsiveMP(pr, $i, $j);
-		}
-	}
-}
-
-/* Flex Utilities */
-.flex-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.flex-space-between {
-	display: flex;
-	justify-content: space-between;
-}
-
-.flex-wrap {
-	flex-wrap: wrap;
-}
-
-.flex-column {
-	flex-direction: column;
 }

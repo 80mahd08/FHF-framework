@@ -11,7 +11,6 @@ $borderRadiusCont: 5;
 	$borderRadiusCont: $borderRadiusCont + 20;
 }
 
-
 /* Object Fit */
 .object-contain {
 	object-fit: contain;
@@ -59,13 +58,6 @@ $borderRadiusCont: 5;
 	z-index: auto;
 }
 
-/* List Style */
-.list-unstyled {
-	padding-left: 0;
-	list-style: none;
-}
-
-
 /* Visibility */
 .visible {
 	visibility: visible;
@@ -74,8 +66,6 @@ $borderRadiusCont: 5;
 .hidden {
 	visibility: hidden;
 }
-
-
 
 /* Overflow */
 .overflow-auto {
@@ -116,4 +106,23 @@ $borderRadiusCont: 5;
 
 .cursor-wait {
 	cursor: wait;
+}
+
+/* Width and Height Utilities */
+@for $i from 1 through 100 {
+	.w-#{$i} {
+		width: percentage($number: calc($i / 100));
+	}
+	.h-#{$i} {
+		height: percentage($number: calc($i / 100));
+	}
+}
+
+@for $i from 1 through 1000 {
+	.w-#{$i}px {
+		width: #{$i}px;
+	}
+	.h-#{$i}px {
+		height: #{$i}px;
+	}
 }

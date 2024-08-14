@@ -1,0 +1,64 @@
+@use "../tools/mixins" as *;
+
+/* Margins and Paddings */
+@for $i from 1 through 20 {
+	.mt-#{$i} {
+		margin-top: 0.5rem * $i;
+	}
+	.mr-#{$i} {
+		margin-right: 0.5rem * $i;
+	}
+	.mb-#{$i} {
+		margin-bottom: 0.5rem * $i;
+	}
+	.ml-#{$i} {
+		margin-left: 0.5rem * $i;
+	}
+	.pt-#{$i} {
+		padding-top: 0.5rem * $i;
+	}
+	.pr-#{$i} {
+		padding-right: 0.5rem * $i;
+	}
+	.pb-#{$i} {
+		padding-bottom: 0.5rem * $i;
+	}
+	.pl-#{$i} {
+		padding-left: 0.5rem * $i;
+	}
+}
+
+@for $i from 1 through 20 {
+	@for $j from 1 through 20 {
+		.resp-m-#{$i}-#{$j} {
+			@include responsiveMP(m, $i, $j);
+		}
+		.resp-mt-#{$i}-#{$j} {
+			@include responsiveMP(mt, $i, $j);
+		}
+		.resp-mb-#{$i}-#{$j} {
+			@include responsiveMP(mb, $i, $j);
+		}
+		.resp-mr-#{$i}-#{$j} {
+			@include responsiveMP(mr, $i, $j);
+		}
+		.resp-ml-#{$i}-#{$j} {
+			@include responsiveMP(ml, $i, $j);
+		}
+		.resp-p-#{$i}-#{$j} {
+			@include responsiveMP(p, $i, $j);
+		}
+		.resp-pt-#{$i}-#{$j} {
+			@include responsiveMP(pt, $i, $j);
+		}
+		.resp-pb-#{$i}-#{$j} {
+			@include responsiveMP(pb, $i, $j);
+		}
+		.resp-pl-#{$i}-#{$j} {
+			@include responsiveMP(pl, $i, $j);
+		}
+		.resp-pr-#{$i}-#{$j} {
+			@include responsiveMP(pr, $i, $j);
+		}
+	}
+}

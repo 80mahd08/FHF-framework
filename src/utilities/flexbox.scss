@@ -1,0 +1,82 @@
+/* Flex Container with Normalized Flex Properties */
+.flex-container {
+	display: -webkit-box; /* Old versions of iOS Safari and other WebKit browsers */
+	display: -ms-flexbox; /* IE 10 */
+	display: -webkit-flex; /* Safari 6.1+ */
+	display: flex; /* Modern browsers */
+
+	flex-wrap: wrap;
+
+	/* Flex properties */
+	-webkit-box-orient: horizontal; /* WebKit box model */
+	-webkit-box-direction: normal; /* WebKit box model */
+	-ms-flex-direction: row; /* IE 10 */
+	-webkit-flex-direction: row; /* Modern browsers */
+	flex-direction: row; /* Modern browsers */
+
+	-webkit-box-pack: start; /* WebKit box model */
+	-ms-flex-pack: start; /* IE 10 */
+	-webkit-justify-content: flex-start; /* Modern browsers */
+	justify-content: flex-start; /* Modern browsers */
+
+	-webkit-box-align: stretch; /* WebKit box model */
+	-ms-flex-align: stretch; /* IE 10 */
+	-webkit-align-items: stretch; /* Modern browsers */
+	align-items: stretch; /* Modern browsers */
+
+	-webkit-flex-wrap: wrap; /* Modern browsers */
+	-ms-flex-wrap: wrap; /* IE 10 */
+	flex-wrap: wrap; /* Modern browsers */
+
+	/* Ensure flex items are responsive */
+	.flex-item {
+		flex: 1 0 300px;
+		box-sizing: border-box;
+	}
+}
+.d-flex {
+	display: -webkit-box; /* Old versions of iOS Safari and other WebKit browsers */
+	display: -ms-flexbox; /* IE 10 */
+	display: -webkit-flex; /* Safari 6.1+ */
+	display: flex; /* Modern browsers */
+
+	/* Flex properties */
+	-webkit-box-orient: horizontal; /* WebKit box model */
+	-webkit-box-direction: normal; /* WebKit box model */
+	-ms-flex-direction: row; /* IE 10 */
+	-webkit-flex-direction: row; /* Modern browsers */
+	flex-direction: row; /* Modern browsers */
+
+	-webkit-box-pack: start; /* WebKit box model */
+	-ms-flex-pack: start; /* IE 10 */
+	-webkit-justify-content: flex-start; /* Modern browsers */
+	justify-content: flex-start; /* Modern browsers */
+
+	-webkit-box-align: stretch; /* WebKit box model */
+	-ms-flex-align: stretch; /* IE 10 */
+	-webkit-align-items: stretch; /* Modern browsers */
+	align-items: stretch; /* Modern browsers */
+
+	-webkit-flex-wrap: nowrap; /* Modern browsers */
+	-ms-flex-wrap: nowrap; /* IE 10 */
+	flex-wrap: nowrap; /* Modern browsers */
+}
+/* Flex Utilities */
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-column {
+	flex-direction: column;
+}

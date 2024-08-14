@@ -1,4 +1,6 @@
-// Responsive Font Sizes
+/* Typography Utilities */
+
+/* Responsive Font Sizes */
 .resp-h1 {
 	font-size: calc(1.5rem + 3vw);
 }
@@ -27,7 +29,7 @@
 	font-size: calc(1rem + 0.5vw);
 }
 
-// Text Horizontal Alignments
+/* Text Horizontal Alignments */
 .textH-center {
 	text-align: center;
 }
@@ -40,7 +42,7 @@
 	text-align: right;
 }
 
-// Text Vertical Alignments
+/* Text Vertical Alignments */
 .textV-center {
 	vertical-align: center;
 }
@@ -81,44 +83,14 @@
 	vertical-align: top;
 }
 
-// Font Weights
-.fw-100 {
-	font-weight: 100;
+/* Font Weights */
+@for $weight from 100 through 900 {
+	.fw-#{$weight} {
+		font-weight: $weight;
+	}
 }
 
-.fw-200 {
-	font-weight: 200;
-}
-
-.fw-300 {
-	font-weight: 300;
-}
-
-.fw-400 {
-	font-weight: 400;
-}
-
-.fw-500 {
-	font-weight: 500;
-}
-
-.fw-600 {
-	font-weight: 600;
-}
-
-.fw-700 {
-	font-weight: 700;
-}
-
-.fw-800 {
-	font-weight: 800;
-}
-
-.fw-900 {
-	font-weight: 900;
-}
-
-// Text Transformations
+/* Text Transformations */
 .textT-none {
 	text-transform: none;
 }
@@ -135,7 +107,7 @@
 	text-transform: lowercase;
 }
 
-// Text Decorations
+/* Text Decorations */
 .textD-none {
 	text-decoration: none;
 }
@@ -153,7 +125,6 @@
 }
 
 /* Word Break */
-
 .wb-normal {
 	word-wrap: normal;
 }
@@ -167,7 +138,6 @@
 }
 
 /* Text Indentation */
-
 .whitespace-normal {
 	white-space: normal;
 }
@@ -186,4 +156,10 @@
 
 .whitespace-pre-wrap {
 	white-space: pre-wrap;
+}
+
+/* List Styles */
+.list-unstyled {
+	padding-left: 0;
+	list-style: none;
 }
