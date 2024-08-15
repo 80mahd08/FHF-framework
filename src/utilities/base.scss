@@ -3,14 +3,6 @@
 @use "../tools/_functions" as *;
 @use "../tools/mixins" as *;
 
-$borderRadiusCont: 5;
-@each $borderRName in $BordeRadiusNames {
-	.#{$borderRName} {
-		border-radius: $borderRadiusCont;
-	}
-	$borderRadiusCont: $borderRadiusCont + 20;
-}
-
 /* Object Fit */
 .object-contain {
 	object-fit: contain;
@@ -59,12 +51,38 @@ $borderRadiusCont: 5;
 }
 
 /* Visibility */
-.visible {
-	visibility: visible;
-}
+// Media queries for different screen sizes
+$breakpoints: (
+	"xs": 0px,
+	// Extra small screens
+	"sm": 768px,
+	// Small screens
+	"md": 992px,
+	// Medium screens
+	"lg": 1200px // Large screens,,,,,,
+);
 
-.hidden {
-	visibility: hidden;
+// Generate visibility classes
+@each $breakpoint, $min-width in $breakpoints {
+	@if $breakpoint == "xs" {
+		.visible-xs {
+			display: block !important; // Visible on extra small screens
+		}
+		.hidden-xs {
+			display: none !important; // Hidden on extra small screens
+		}
+	} @else {
+		.visible-#{$breakpoint} {
+			@media (min-width: $min-width) {
+				display: block !important; // Visible on screens of the specified size
+			}
+		}
+		.hidden-#{$breakpoint} {
+			@media (min-width: $min-width) {
+				display: none !important; // Hidden on screens of the specified size
+			}
+		}
+	}
 }
 
 /* Overflow */
