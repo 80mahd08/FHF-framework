@@ -1,5 +1,8 @@
+@use "sass:map";
+
 @use "./../tools/media_query" as *;
 @use "./../tools//variables" as *;
+@use "./../tools/functions" as *;
 
 /* Layout Utilities */
 .container {
@@ -77,49 +80,107 @@
 	display: none;
 }
 
-// Loop for gap utilities
-@each $key, $value in $gap-values {
-	.gap-#{$key} {
-		gap: $value;
-	}
-	.gap-x-#{$key} {
-		column-gap: $value;
-	}
-	.gap-y-#{$key} {
-		row-gap: $value;
-	}
+.d-flex {
+	display: flex;
 }
 
-// Media queries for different screen sizes
-$breakpoints: (
-	"xs": 0px,
-	// Extra small screens
-	"sm": 768px,
-	// Small screens
-	"md": 992px,
-	// Medium screens
-	"lg": 1200px // Large screens,,
-);
+.d-inline-flex {
+	display: inline-flex;
+}
 
-// Generate visibility classes
-@each $breakpoint, $min-width in $breakpoints {
-	@if $breakpoint == "xs" {
-		.visible-xs {
-			display: block !important; // Visible on extra small screens
-		}
-		.hidden-xs {
-			display: none !important; // Hidden on extra small screens
-		}
-	} @else {
-		.visible-#{$breakpoint} {
-			@media (min-width: $min-width) {
-				display: block !important; // Visible on screens of the specified size
-			}
-		}
-		.hidden-#{$breakpoint} {
-			@media (min-width: $min-width) {
-				display: none !important; // Hidden on screens of the specified size
-			}
-		}
+.d-grid {
+	display: grid;
+}
+
+.d-inline-grid {
+	display: inline-grid;
+}
+
+.d-table {
+	display: table;
+}
+
+.d-table-row {
+	display: table-row;
+}
+
+.d-table-cell {
+	display: table-cell;
+}
+
+.d-table-caption {
+	display: table-caption;
+}
+
+.d-table-column {
+	display: table-column;
+}
+
+.d-table-column-group {
+	display: table-column-group;
+}
+
+.d-table-header-group {
+	display: table-header-group;
+}
+
+.d-table-footer-group {
+	display: table-footer-group;
+}
+
+.d-table-row-group {
+	display: table-row-group;
+}
+
+// Loop for gap utilities
+@each $key, $value in $gap-values {
+	$key-sanitized: sanitize-key($key);
+
+	.gap-#{$key-sanitized} {
+		gap: $value;
 	}
+	.gap-x-#{$key-sanitized} {
+		column-gap: $value;
+	}
+	.gap-y-#{$key-sanitized} {
+		row-gap: $value;
+	}
+} /*positioning*/
+
+.p-static {
+	position: static;
+}
+.p-relative {
+	position: relative;
+}
+.p-absolute {
+	position: absolute;
+}
+.p-fixed {
+	position: fixed;
+}
+.p-sticky {
+	position: sticky;
+}
+.p-relative-top {
+	top: 0;
+	position: relative;
+}
+.p-relative-bottom {
+	bottom: 0;
+	position: relative;
+}
+.p-relative-left {
+	left: 0;
+	position: relative;
+}
+.p-relative-right {
+	right: 0;
+	position: relative;
+}
+.p-relative-center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: relative;
 }

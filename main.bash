@@ -12,3 +12,9 @@ sass src/utilities/normalize.scss dist/normalize.css
 echo "normalize.scss compiled"
 sass src/utilities/typography.scss dist/typography.css
 echo "typography.scss compiled"
+sass src/utilities/border.scss dist/border.css
+echo "border.scss compiled"
+sass src/utilities/flexbox.scss dist/flexbox.css
+echo "flexbox.scss compiled"
+sass src/utilities/spacing.scss dist/spacing.css
+echo "spacing.scss compiled"

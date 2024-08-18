@@ -159,7 +159,43 @@
 }
 
 /* List Styles */
-.list-unstyled {
-	padding-left: 0;
+.list-style-none {
+	padding: 0;
 	list-style: none;
+}
+
+.list-style-disc {
+	list-style: disc;
+}
+
+.list-style-circle {
+	list-style: circle;
+}
+
+.list-style-square {
+	list-style: square;
+}
+
+.list-style-decimal {
+	list-style: decimal;
+}
+
+.list-style-lower-alpha {
+	list-style: lower-alpha;
+}
+
+.list-style-upper-alpha {
+	list-style: upper-alpha;
+}
+
+.list-style-lower-roman {
+	list-style: lower-roman;
+}
+
+.list-style-upper-roman {
+	list-style: upper-roman;
+}
+
+.list-style-inherit {
+	list-style: inherit;
 }
