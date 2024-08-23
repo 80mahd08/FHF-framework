@@ -1,5 +1,9 @@
 # FHF - CSS Framework
 
+<p style="text-align:center">
+	<img src="./fhf-logo.svg" alt="logo" />
+</p>
+
 ## Introduction
 
 FHF is a lightweight, flexible, and modern CSS framework designed to help developers build responsive and aesthetically pleasing web interfaces quickly and easily. It provides a comprehensive set of tools and components to streamline the development process.
@@ -58,3 +62,9 @@ After installation, you can start using FHF classes in your HTML:
 - **Customizable**: Easily customize the framework to match your design requirements.
 - **Predefined Components**: Use prebuilt components like buttons, forms, navbars, and more.
 - **Modern Design**: Follow modern design principles for clean and attractive UI.
+
+for more more comprehensive documentation click on this btn
+
+<p style="text-align:center">
+	<a style="color:#8B3C7F ; background: #fae3f6 ; padding: 10px 20px ; border-radius: 15px ; border: 1px solid #8B3C7F" href="https://fhf-docs-v2.web.app/">fhf-docs<a>
+</p>
