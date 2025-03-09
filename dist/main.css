@@ -14062,27 +14062,6 @@ template {
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
-/* Floats */
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-/* Clearfix */
-.clear-fix {
-  *zoom: 1; /* IE 6/7 */
-}
-.clear-fix:after, .clear-fix:before {
-  content: " ";
-  display: table;
-}
-.clear-fix:after {
-  clear: both;
-}
-
 /* Display */
 .d-block {
   display: block;
@@ -53116,43 +53095,43 @@ template {
 
 /* Button Interactions */
 .btn-primary:hover {
-  background-color: #0257d5;
-  border-color: #0257d5;
+  background-color: rgb(1.762295082, 87.2336065574, 213.237704918);
+  border-color: rgb(1.762295082, 87.2336065574, 213.237704918);
 }
 
 .btn-secondary:hover {
-  background-color: #545b62;
-  border-color: #545b62;
+  background-color: rgb(84.3605150215, 91.3905579399, 97.6394849785);
+  border-color: rgb(84.3605150215, 91.3905579399, 97.6394849785);
 }
 
 .btn-success:hover {
-  background-color: #115c39;
-  border-color: #115c39;
+  background-color: rgb(17.03125, 91.96875, 57.225);
+  border-color: rgb(17.03125, 91.96875, 57.225);
 }
 
 .btn-danger:hover {
-  background-color: #bd2130;
-  border-color: #bd2130;
+  background-color: rgb(189.2151898734, 32.7848101266, 47.7721518987);
+  border-color: rgb(189.2151898734, 32.7848101266, 47.7721518987);
 }
 
 .btn-warning:hover {
-  background-color: #d39e00;
-  border-color: #d39e00;
+  background-color: rgb(211, 158.25, 0);
+  border-color: rgb(211, 158.25, 0);
 }
 
 .btn-info:hover {
-  background-color: #0aa1c0;
-  border-color: #0aa1c0;
+  background-color: rgb(10.3794466403, 161.2806324111, 191.6205533597);
+  border-color: rgb(10.3794466403, 161.2806324111, 191.6205533597);
 }
 
 .btn-light:hover {
-  background-color: #dae0e5;
-  border-color: #dae0e5;
+  background-color: rgb(218.25, 223.5, 228.75);
+  border-color: rgb(218.25, 223.5, 228.75);
 }
 
 .btn-dark:hover {
-  background-color: #0a0c0d;
-  border-color: #0a0c0d;
+  background-color: rgb(10.2567567568, 11.5, 12.7432432432);
+  border-color: rgb(10.2567567568, 11.5, 12.7432432432);
 }
 
 .btn:focus {
@@ -53161,8 +53140,8 @@ template {
 }
 
 .btn:active {
-  background-color: #024dbc; /* Default to primary color for active state */
-  border-color: #024dbc; /* Default to primary color for active state */
+  background-color: rgb(1.5532786885, 76.887295082, 187.9467213115); /* Default to primary color for active state */
+  border-color: rgb(1.5532786885, 76.887295082, 187.9467213115); /* Default to primary color for active state */
 }
 
 .btn:disabled {

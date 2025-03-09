@@ -6,181 +6,159 @@
 
 /* Layout Utilities */
 .container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 
-	// Apply styles for large screens
-	@include respond-to(large) {
-		max-width: 1000px;
-	}
+  // Apply styles for large screens
+  @include respond-to(large) {
+    max-width: 1000px;
+  }
 
-	// Apply styles for medium screens
-	@include respond-to(medium) {
-		max-width: 800px;
-		padding: 15px;
-	}
+  // Apply styles for medium screens
+  @include respond-to(medium) {
+    max-width: 800px;
+    padding: 15px;
+  }
 
-	// Apply styles for small screens
-	@include respond-to(small) {
-		max-width: 100%;
-		padding: 10px;
-	}
+  // Apply styles for small screens
+  @include respond-to(small) {
+    max-width: 100%;
+    padding: 10px;
+  }
 }
 
 /* Responsive Grid Utilities */
 @for $i from 100 through 500 {
-	.respGridFill-#{$i} {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(#{$i}px, 1fr));
-	}
-	.respGridFit-#{$i} {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(#{$i}px, 1fr));
-	}
-}
-
-/* Floats */
-.float-left {
-	float: left;
-}
-
-.float-right {
-	float: right;
-}
-
-/* Clearfix */
-.clear-fix {
-	&:after,
-	&:before {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-	*zoom: 1; /* IE 6/7 */
+  .respGridFill-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(#{$i}px, 1fr));
+  }
+  .respGridFit-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{$i}px, 1fr));
+  }
 }
 
 /* Display */
 .d-block {
-	display: block;
+  display: block;
 }
 
 .d-inline-block {
-	display: inline-block;
+  display: inline-block;
 }
 
 .d-inline {
-	display: inline;
+  display: inline;
 }
 
 .d-none {
-	display: none;
+  display: none;
 }
 
 .d-flex {
-	display: flex;
+  display: flex;
 }
 
 .d-inline-flex {
-	display: inline-flex;
+  display: inline-flex;
 }
 
 .d-grid {
-	display: grid;
+  display: grid;
 }
 
 .d-inline-grid {
-	display: inline-grid;
+  display: inline-grid;
 }
 
 .d-table {
-	display: table;
+  display: table;
 }
 
 .d-table-row {
-	display: table-row;
+  display: table-row;
 }
 
 .d-table-cell {
-	display: table-cell;
+  display: table-cell;
 }
 
 .d-table-caption {
-	display: table-caption;
+  display: table-caption;
 }
 
 .d-table-column {
-	display: table-column;
+  display: table-column;
 }
 
 .d-table-column-group {
-	display: table-column-group;
+  display: table-column-group;
 }
 
 .d-table-header-group {
-	display: table-header-group;
+  display: table-header-group;
 }
 
 .d-table-footer-group {
-	display: table-footer-group;
+  display: table-footer-group;
 }
 
 .d-table-row-group {
-	display: table-row-group;
+  display: table-row-group;
 }
 
 // Loop for gap utilities
 @each $key, $value in $gap-values {
-	$key-sanitized: sanitize-key($key);
+  $key-sanitized: sanitize-key($key);
 
-	.gap-#{$key-sanitized} {
-		gap: $value;
-	}
-	.gap-x-#{$key-sanitized} {
-		column-gap: $value;
-	}
-	.gap-y-#{$key-sanitized} {
-		row-gap: $value;
-	}
+  .gap-#{$key-sanitized} {
+    gap: $value;
+  }
+  .gap-x-#{$key-sanitized} {
+    column-gap: $value;
+  }
+  .gap-y-#{$key-sanitized} {
+    row-gap: $value;
+  }
 } /*positioning*/
 
 .p-static {
-	position: static;
+  position: static;
 }
 .p-relative {
-	position: relative;
+  position: relative;
 }
 .p-absolute {
-	position: absolute;
+  position: absolute;
 }
 .p-fixed {
-	position: fixed;
+  position: fixed;
 }
 .p-sticky {
-	position: sticky;
+  position: sticky;
 }
 .p-relative-top {
-	top: 0;
-	position: relative;
+  top: 0;
+  position: relative;
 }
 .p-relative-bottom {
-	bottom: 0;
-	position: relative;
+  bottom: 0;
+  position: relative;
 }
 .p-relative-left {
-	left: 0;
-	position: relative;
+  left: 0;
+  position: relative;
 }
 .p-relative-right {
-	right: 0;
-	position: relative;
+  right: 0;
+  position: relative;
 }
 .p-relative-center {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
 }
