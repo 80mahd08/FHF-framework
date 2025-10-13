@@ -1,14 +1,30 @@
-/* Main Import File */
-@use "./tools/_functions" as *;
-@use "./tools/_variables" as *;
+// main.scss - Master file
 
-@import "./utilities/normalize";
-@import "./utilities/base";
-@import "./utilities/layout";
-@import "./utilities/colors";
-@import "./utilities/typography";
-@import "./utilities/flexbox.scss";
-@import "./utilities//spacing.scss";
-@import "./utilities//border.scss";
+// 1. Tools (no CSS output)
+@use "tools/variables";
+@use "tools/functions";
+@use "tools/mixins";
+@use "tools/media_query";
 
-@import "./components/_buttons";
+// 2. Base styles
+@use "base/reset";
+@use "base/typography";
+@use "base/base";
+
+// 3. Layout
+@use "layout/container";
+@use "layout/grid";
+@use "layout/flexbox";
+@use "layout/flexbox-legacy"; // Optional
+@use "layout/positioning";
+
+// 4. Utilities
+@use "utilities/spacing";
+@use "utilities/display";
+@use "utilities/borders";
+@use "utilities/object-fit";
+@use "utilities/visibility";
+
+// 5. Components (future)
+// @use 'components/buttons';
+// @use 'components/cards';

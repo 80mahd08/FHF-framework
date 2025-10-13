@@ -1,0 +1,842 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   POSITIONING UTILITIES
+   Position, placement, and z-index utilities
+   ============================================ */
+
+/* ============================================
+   Position Types
+   ============================================ */
+
+.position-static {
+  position: static;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+// Shortened versions
+.p-static {
+  position: static;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.p-sticky {
+  position: sticky;
+}
+
+/* ============================================
+   Top Positioning
+   ============================================ */
+
+.top-0 {
+  top: 0;
+}
+
+.top-auto {
+  top: auto;
+}
+
+.top-full {
+  top: 100%;
+}
+
+.top-half {
+  top: 50%;
+}
+
+// Rem-based positioning (0.5rem increments, 1-20)
+@for $i from 1 through 20 {
+  .top-#{$i} {
+    top: #{$i * 0.5}rem;
+  }
+
+  // Negative values
+  .top-n#{$i} {
+    top: #{$i * -0.5}rem;
+  }
+}
+
+// Legacy support (from your original code)
+@for $i from 1 through 20 {
+  .tp-#{$i} {
+    top: #{$i * 0.5}rem;
+  }
+}
+
+// Percentage-based positioning
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .top-#{$i}p {
+      top: #{$i}#{"%"};
+    }
+  }
+}
+
+/* ============================================
+   Right Positioning
+   ============================================ */
+
+.right-0 {
+  right: 0;
+}
+
+.right-auto {
+  right: auto;
+}
+
+.right-full {
+  right: 100%;
+}
+
+.right-half {
+  right: 50%;
+}
+
+// Rem-based positioning (0.5rem increments, 1-20)
+@for $i from 1 through 20 {
+  .right-#{$i} {
+    right: #{$i * 0.5}rem;
+  }
+
+  // Negative values
+  .right-n#{$i} {
+    right: #{$i * -0.5}rem;
+  }
+}
+
+// Legacy support (from your original code)
+@for $i from 1 through 20 {
+  .rh-#{$i} {
+    right: #{$i * 0.5}rem;
+  }
+}
+
+// Percentage-based positioning
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .right-#{$i}p {
+      right: #{$i}#{"%"};
+    }
+  }
+}
+
+/* ============================================
+   Bottom Positioning
+   ============================================ */
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.bottom-auto {
+  bottom: auto;
+}
+
+.bottom-full {
+  bottom: 100%;
+}
+
+.bottom-half {
+  bottom: 50%;
+}
+
+// Rem-based positioning (0.5rem increments, 1-20)
+@for $i from 1 through 20 {
+  .bottom-#{$i} {
+    bottom: #{$i * 0.5}rem;
+  }
+
+  // Negative values
+  .bottom-n#{$i} {
+    bottom: #{$i * -0.5}rem;
+  }
+}
+
+// Legacy support (from your original code)
+@for $i from 1 through 20 {
+  .bt-#{$i} {
+    bottom: #{$i * 0.5}rem;
+  }
+}
+
+// Percentage-based positioning
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .bottom-#{$i}p {
+      bottom: #{$i}#{"%"};
+    }
+  }
+}
+
+/* ============================================
+   Left Positioning
+   ============================================ */
+
+.left-0 {
+  left: 0;
+}
+
+.left-auto {
+  left: auto;
+}
+
+.left-full {
+  left: 100%;
+}
+
+.left-half {
+  left: 50%;
+}
+
+// Rem-based positioning (0.5rem increments, 1-20)
+@for $i from 1 through 20 {
+  .left-#{$i} {
+    left: #{$i * 0.5}rem;
+  }
+
+  // Negative values
+  .left-n#{$i} {
+    left: #{$i * -0.5}rem;
+  }
+}
+
+// Legacy support (from your original code)
+@for $i from 1 through 20 {
+  .lf-#{$i} {
+    left: #{$i * 0.5}rem;
+  }
+}
+
+// Percentage-based positioning
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .left-#{$i}p {
+      left: #{$i}#{"%"};
+    }
+  }
+}
+
+/* ============================================
+   Inset (All Sides)
+   ============================================ */
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.inset-auto {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+@for $i from 1 through 20 {
+  .inset-#{$i} {
+    top: #{$i * 0.5}rem;
+    right: #{$i * 0.5}rem;
+    bottom: #{$i * 0.5}rem;
+    left: #{$i * 0.5}rem;
+  }
+}
+
+// Inset X (left and right)
+.inset-x-0 {
+  left: 0;
+  right: 0;
+}
+
+.inset-x-auto {
+  left: auto;
+  right: auto;
+}
+
+@for $i from 1 through 20 {
+  .inset-x-#{$i} {
+    left: #{$i * 0.5}rem;
+    right: #{$i * 0.5}rem;
+  }
+}
+
+// Inset Y (top and bottom)
+.inset-y-0 {
+  top: 0;
+  bottom: 0;
+}
+
+.inset-y-auto {
+  top: auto;
+  bottom: auto;
+}
+
+@for $i from 1 through 20 {
+  .inset-y-#{$i} {
+    top: #{$i * 0.5}rem;
+    bottom: #{$i * 0.5}rem;
+  }
+}
+
+/* ============================================
+   Z-Index
+   ============================================ */
+
+.z-auto {
+  z-index: auto;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+// Z-index values (0-50)
+@for $i from 0 through 50 {
+  .z-#{$i} {
+    z-index: $i;
+  }
+
+  .z-index-#{$i} {
+    z-index: $i;
+  }
+}
+
+// Negative z-index
+@for $i from 1 through 10 {
+  .z-n#{$i} {
+    z-index: -#{$i};
+  }
+}
+
+// Common z-index layers
+.z-dropdown {
+  z-index: 1000;
+}
+
+.z-sticky {
+  z-index: 1020;
+}
+
+.z-fixed {
+  z-index: 1030;
+}
+
+.z-modal-backdrop {
+  z-index: 1040;
+}
+
+.z-modal {
+  z-index: 1050;
+}
+
+.z-popover {
+  z-index: 1060;
+}
+
+.z-tooltip {
+  z-index: 1070;
+}
+
+/* ============================================
+   Common Positioning Patterns
+   ============================================ */
+
+// Absolute positioning at edges
+.absolute-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.absolute-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.absolute-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// Absolute center (perfect centering)
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Absolute center with transform
+.absolute-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Fixed positioning at edges
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.fixed-left {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.fixed-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1030;
+}
+
+// Sticky positioning
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.sticky-bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 1020;
+}
+
+// Legacy support (from your original code)
+.p-relative-top {
+  position: relative;
+  top: 0;
+}
+
+.p-relative-bottom {
+  position: relative;
+  bottom: 0;
+}
+
+.p-relative-left {
+  position: relative;
+  left: 0;
+}
+
+.p-relative-right {
+  position: relative;
+  right: 0;
+}
+
+.p-relative-center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ============================================
+   Full Screen / Cover
+   ============================================ */
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   Aspect Ratio Containers (with positioning)
+   ============================================ */
+
+.aspect-ratio-box {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: "";
+    display: block;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.aspect-16-9::before {
+  padding-top: 56.25%; // 9/16 = 0.5625
+}
+
+.aspect-4-3::before {
+  padding-top: 75%; // 3/4 = 0.75
+}
+
+.aspect-1-1::before {
+  padding-top: 100%;
+}
+
+.aspect-21-9::before {
+  padding-top: 42.857%; // 9/21
+}
+
+/* ============================================
+   Float (Legacy Support)
+   ============================================ */
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-none {
+  float: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ============================================
+   Clear
+   ============================================ */
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.clear-none {
+  clear: none;
+}
+
+/* ============================================
+   Isolation
+   ============================================ */
+
+.isolate {
+  isolation: isolate;
+}
+
+.isolation-auto {
+  isolation: auto;
+}
+
+/* ============================================
+   Object Position (for img, video)
+   ============================================ */
+
+.object-bottom {
+  object-position: bottom;
+}
+
+.object-center {
+  object-position: center;
+}
+
+.object-left {
+  object-position: left;
+}
+
+.object-left-bottom {
+  object-position: left bottom;
+}
+
+.object-left-top {
+  object-position: left top;
+}
+
+.object-right {
+  object-position: right;
+}
+
+.object-right-bottom {
+  object-position: right bottom;
+}
+
+.object-right-top {
+  object-position: right top;
+}
+
+.object-top {
+  object-position: top;
+}
+
+/* ============================================
+   Responsive Positioning
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Position types
+    .position-#{$breakpoint}-static {
+      position: static;
+    }
+
+    .position-#{$breakpoint}-relative {
+      position: relative;
+    }
+
+    .position-#{$breakpoint}-absolute {
+      position: absolute;
+    }
+
+    .position-#{$breakpoint}-fixed {
+      position: fixed;
+    }
+
+    .position-#{$breakpoint}-sticky {
+      position: sticky;
+    }
+
+    // Top positioning
+    .top-#{$breakpoint}-0 {
+      top: 0;
+    }
+
+    .top-#{$breakpoint}-auto {
+      top: auto;
+    }
+
+    // Bottom positioning
+    .bottom-#{$breakpoint}-0 {
+      bottom: 0;
+    }
+
+    .bottom-#{$breakpoint}-auto {
+      bottom: auto;
+    }
+
+    // Left positioning
+    .left-#{$breakpoint}-0 {
+      left: 0;
+    }
+
+    .left-#{$breakpoint}-auto {
+      left: auto;
+    }
+
+    // Right positioning
+    .right-#{$breakpoint}-0 {
+      right: 0;
+    }
+
+    .right-#{$breakpoint}-auto {
+      right: auto;
+    }
+  }
+}
+
+/* ============================================
+   Backdrop Positioning (for overlays)
+   ============================================ */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+.backdrop-light {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.backdrop-dark {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(4px);
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .position-fixed,
+  .position-sticky {
+    position: static;
+  }
+
+  .fixed-top,
+  .fixed-bottom,
+  .fixed-left,
+  .fixed-right,
+  .sticky-top,
+  .sticky-bottom {
+    position: static;
+  }
+}
+
+/* ============================================
+   Pinned Elements (Corners)
+   ============================================ */
+
+.pin-top-left {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.pin-top-right {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.pin-bottom-left {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.pin-bottom-right {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* ============================================
+   Transform Origin (for animations/transforms)
+   ============================================ */
+
+.origin-center {
+  transform-origin: center;
+}
+
+.origin-top {
+  transform-origin: top;
+}
+
+.origin-top-right {
+  transform-origin: top right;
+}
+
+.origin-right {
+  transform-origin: right;
+}
+
+.origin-bottom-right {
+  transform-origin: bottom right;
+}
+
+.origin-bottom {
+  transform-origin: bottom;
+}
+
+.origin-bottom-left {
+  transform-origin: bottom left;
+}
+
+.origin-left {
+  transform-origin: left;
+}
+
+.origin-top-left {
+  transform-origin: top left;
+}

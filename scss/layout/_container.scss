@@ -1,0 +1,475 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   CONTAINER UTILITIES
+   Responsive container layouts
+   ============================================ */
+
+/* ============================================
+   Default Container
+   ============================================ */
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  // Extra small devices (portrait phones, less than 576px)
+  // No media query for xs since this is the default
+
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    max-width: 720px;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    max-width: 960px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  // Extra extra large devices (larger desktops, 1400px and up)
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+/* ============================================
+   Fluid Container (Full Width)
+   ============================================ */
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 768px) {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+/* ============================================
+   Responsive Containers (Breakpoint-specific)
+   ============================================ */
+
+// Container that is fluid until specified breakpoint
+.container-sm {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+}
+
+.container-md {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+}
+
+.container-lg {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.container-xl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.container-xxl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+/* ============================================
+   Custom Max-Width Containers
+   ============================================ */
+
+.container-xs {
+  max-width: 475px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.container-2xl {
+  width: 100%;
+  max-width: 1536px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 768px) {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+.container-3xl {
+  width: 100%;
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media (min-width: 768px) {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+/* ============================================
+   Narrow Containers (For Reading Content)
+   ============================================ */
+
+.container-narrow {
+  max-width: 768px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.container-prose {
+  max-width: 65ch; // Optimal reading width (65 characters)
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* ============================================
+   Container Padding Variants
+   ============================================ */
+
+.container-no-padding {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.container-sm-padding {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.container-lg-padding {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.container-xl-padding {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+/* ============================================
+   Section Containers (With Vertical Spacing)
+   ============================================ */
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @media (min-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.section-sm {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.section-lg {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.section-xl {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @media (min-width: 768px) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/* ============================================
+   Container with Background
+   ============================================ */
+
+.container-bg {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
+}
+
+/* ============================================
+   Centered Content Container
+   ============================================ */
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ============================================
+   Grid Container (Wrapper for Grid Systems)
+   ============================================ */
+
+.container-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
+}
+
+/* ============================================
+   Utility Classes for Containers
+   ============================================ */
+
+// Remove max-width constraint
+.w-full {
+  max-width: none;
+}
+
+// Center without max-width
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Container with specific widths
+@for $i from 1 through 20 {
+  .container-w-#{$i * 5} {
+    max-width: "#{$i * 5}%";
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+/* ============================================
+   Print-Specific Container Styles
+   ============================================ */
+
+@media print {
+  .container,
+  .container-fluid,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .section,
+  .section-sm,
+  .section-lg,
+  .section-xl {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* ============================================
+   Container Queries Support (Future-proof)
+   ============================================ */
+
+// When container queries are fully supported
+@supports (container-type: inline-size) {
+  .container-query {
+    container-type: inline-size;
+  }
+}
+
+/* ============================================
+   Aspect Ratio Containers
+   ============================================ */
+
+.container-aspect-square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-aspect-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-aspect-ultrawide {
+  aspect-ratio: 21 / 9;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-aspect-4-3 {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ============================================
+   Scrollable Container
+   ============================================ */
+
+.container-scrollable {
+  overflow-y: auto;
+  max-height: 100vh;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+
+    &:hover {
+      background: #555;
+    }
+  }
+}
+
+/* ============================================
+   Sticky Container
+   ============================================ */
+
+.container-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

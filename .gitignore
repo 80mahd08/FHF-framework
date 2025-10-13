@@ -1,13 +1,7 @@
 /.vscode
 /node_modules/
-<<<<<<< HEAD
-
 tjcss.scss
 
 *.docx
 
 dist
-=======
-tjcss.scss
-dist/*
->>>>>>> main

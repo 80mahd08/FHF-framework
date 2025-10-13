@@ -1,0 +1,27 @@
+@mixin responsiveMP($breakpoint, $i, $j) {
+  $i: $i * 5;
+  $j: $j * 5;
+  @if $breakpoint == m {
+    margin: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == mt {
+    margin-top: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == mb {
+    margin-bottom: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == mr {
+    margin-right: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == ml {
+    margin-left: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == p {
+    padding: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == p {
+    padding-top: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == pt {
+    padding-top: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == pb {
+    padding-bottom: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == pr {
+    padding-right: clamp(#{$i}px, 5vw, #{$j}px);
+  } @else if $breakpoint == pl {
+    padding-left: clamp(#{$i}px, 5vw, #{$j}px);
+  }
+}

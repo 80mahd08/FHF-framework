@@ -1,0 +1,29 @@
+// main.scss - Master file
+
+// 1. Tools (no CSS output)
+@use "tools/variables";
+@use "tools/functions";
+@use "tools/mixins";
+@use "tools/media_query";
+
+// 2. Base styles
+@use "base/reset";
+@use "base/typography";
+@use "base/base";
+
+// 3. Layout
+@use "layout/container";
+@use "layout/grid";
+@use "layout/flexbox";
+@use "layout/positioning";
+
+// 4. Utilities
+@use "utilities/spacing";
+@use "utilities/display";
+@use "utilities/borders";
+@use "utilities/object-fit";
+@use "utilities/visibility";
+
+// 5. Components (future)
+// @use 'components/buttons';
+// @use 'components/cards';

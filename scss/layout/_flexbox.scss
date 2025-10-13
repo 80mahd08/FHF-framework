@@ -1,0 +1,743 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   FLEXBOX UTILITIES
+   Modern flexbox layout utilities
+   ============================================ */
+
+/* ============================================
+   Display Flex
+   ============================================ */
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+/* ============================================
+   Flex Direction
+   ============================================ */
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* ============================================
+   Flex Wrap
+   ============================================ */
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* ============================================
+   Justify Content (Main Axis)
+   ============================================ */
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Alternative naming (more verbose)
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+/* ============================================
+   Align Items (Cross Axis)
+   ============================================ */
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+// Alternative naming (more verbose)
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+/* ============================================
+   Align Content (Multi-line)
+   ============================================ */
+
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+// Alternative naming (more verbose)
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-between {
+  align-content: space-between;
+}
+
+.align-content-around {
+  align-content: space-around;
+}
+
+.align-content-stretch {
+  align-content: stretch;
+}
+
+/* ============================================
+   Align Self (Individual Item)
+   ============================================ */
+
+.self-auto {
+  align-self: auto;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+// Alternative naming (more verbose)
+.align-self-auto {
+  align-self: auto;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-baseline {
+  align-self: baseline;
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+/* ============================================
+   Flex Grow
+   ============================================ */
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+@for $i from 0 through 12 {
+  .flex-grow-#{$i} {
+    flex-grow: $i;
+  }
+}
+
+/* ============================================
+   Flex Shrink
+   ============================================ */
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+@for $i from 0 through 12 {
+  .flex-shrink-#{$i} {
+    flex-shrink: $i;
+  }
+}
+
+/* ============================================
+   Flex Basis
+   ============================================ */
+
+.flex-basis-auto {
+  flex-basis: auto;
+}
+
+.flex-basis-0 {
+  flex-basis: 0;
+}
+
+.flex-basis-full {
+  flex-basis: 100%;
+}
+
+// Percentage-based flex basis
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .flex-basis-#{$i} {
+      flex-basis: #{$i}#{"%"};
+    }
+  }
+}
+
+// Pixel-based flex basis
+$flex-basis-sizes: 50, 100, 150, 200, 250, 300, 350, 400, 450, 500;
+@each $size in $flex-basis-sizes {
+  .flex-basis-#{$size}px {
+    flex-basis: #{$size}px;
+  }
+}
+
+/* ============================================
+   Flex Shorthand (Combined Properties)
+   ============================================ */
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+// Equal width flex items
+@for $i from 1 through 12 {
+  .flex-#{$i} {
+    flex: 0 0 calc(100% / 12 * #{$i});
+    max-width: calc(100% / 12 * #{$i});
+  }
+}
+
+/* ============================================
+   Order
+   ============================================ */
+
+.order-first {
+  order: -9999;
+}
+
+.order-last {
+  order: 9999;
+}
+
+.order-none {
+  order: 0;
+}
+
+@for $i from 0 through 12 {
+  .order-#{$i} {
+    order: $i;
+  }
+}
+
+// Negative order
+@for $i from 1 through 12 {
+  .order-n#{$i} {
+    order: -#{$i};
+  }
+}
+
+/* ============================================
+   Gap (Spacing Between Items)
+   ============================================ */
+
+// Standard gap sizes
+.gap-0 {
+  gap: 0;
+}
+
+@for $i from 1 through 20 {
+  .gap-#{$i} {
+    gap: #{$i * 0.25}rem;
+  }
+}
+
+// Column gap (horizontal spacing)
+.gap-x-0 {
+  column-gap: 0;
+}
+
+@for $i from 1 through 20 {
+  .gap-x-#{$i} {
+    column-gap: #{$i * 0.25}rem;
+  }
+}
+
+// Row gap (vertical spacing)
+.gap-y-0 {
+  row-gap: 0;
+}
+
+@for $i from 1 through 20 {
+  .gap-y-#{$i} {
+    row-gap: #{$i * 0.25}rem;
+  }
+}
+
+/* ============================================
+   Common Flex Patterns (Utility Combos)
+   ============================================ */
+
+// Centered content (both axes)
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Space between with centered items
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Space around with centered items
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// Space evenly with centered items
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+// Column with centered content
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Column with space between
+.flex-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Row with items at start
+.flex-row-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+// Row with items at end
+.flex-row-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// Wrap with gap
+.flex-wrap-gap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ============================================
+   Responsive Flexbox Utilities
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Display
+    .d-#{$breakpoint}-flex {
+      display: flex;
+    }
+
+    .d-#{$breakpoint}-inline-flex {
+      display: inline-flex;
+    }
+
+    // Flex direction
+    .flex-#{$breakpoint}-row {
+      flex-direction: row;
+    }
+
+    .flex-#{$breakpoint}-row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .flex-#{$breakpoint}-column {
+      flex-direction: column;
+    }
+
+    .flex-#{$breakpoint}-column-reverse {
+      flex-direction: column-reverse;
+    }
+
+    // Flex wrap
+    .flex-#{$breakpoint}-wrap {
+      flex-wrap: wrap;
+    }
+
+    .flex-#{$breakpoint}-nowrap {
+      flex-wrap: nowrap;
+    }
+
+    .flex-#{$breakpoint}-wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+
+    // Justify content
+    .justify-#{$breakpoint}-start {
+      justify-content: flex-start;
+    }
+
+    .justify-#{$breakpoint}-end {
+      justify-content: flex-end;
+    }
+
+    .justify-#{$breakpoint}-center {
+      justify-content: center;
+    }
+
+    .justify-#{$breakpoint}-between {
+      justify-content: space-between;
+    }
+
+    .justify-#{$breakpoint}-around {
+      justify-content: space-around;
+    }
+
+    .justify-#{$breakpoint}-evenly {
+      justify-content: space-evenly;
+    }
+
+    // Align items
+    .items-#{$breakpoint}-start {
+      align-items: flex-start;
+    }
+
+    .items-#{$breakpoint}-end {
+      align-items: flex-end;
+    }
+
+    .items-#{$breakpoint}-center {
+      align-items: center;
+    }
+
+    .items-#{$breakpoint}-baseline {
+      align-items: baseline;
+    }
+
+    .items-#{$breakpoint}-stretch {
+      align-items: stretch;
+    }
+
+    // Align content
+    .content-#{$breakpoint}-start {
+      align-content: flex-start;
+    }
+
+    .content-#{$breakpoint}-end {
+      align-content: flex-end;
+    }
+
+    .content-#{$breakpoint}-center {
+      align-content: center;
+    }
+
+    .content-#{$breakpoint}-between {
+      align-content: space-between;
+    }
+
+    .content-#{$breakpoint}-around {
+      align-content: space-around;
+    }
+
+    // Align self
+    .self-#{$breakpoint}-auto {
+      align-self: auto;
+    }
+
+    .self-#{$breakpoint}-start {
+      align-self: flex-start;
+    }
+
+    .self-#{$breakpoint}-end {
+      align-self: flex-end;
+    }
+
+    .self-#{$breakpoint}-center {
+      align-self: center;
+    }
+
+    .self-#{$breakpoint}-baseline {
+      align-self: baseline;
+    }
+
+    .self-#{$breakpoint}-stretch {
+      align-self: stretch;
+    }
+
+    // Flex grow/shrink
+    .flex-#{$breakpoint}-grow-0 {
+      flex-grow: 0;
+    }
+
+    .flex-#{$breakpoint}-grow {
+      flex-grow: 1;
+    }
+
+    .flex-#{$breakpoint}-shrink-0 {
+      flex-shrink: 0;
+    }
+
+    .flex-#{$breakpoint}-shrink {
+      flex-shrink: 1;
+    }
+
+    // Flex shorthand
+    .flex-#{$breakpoint}-1 {
+      flex: 1 1 0%;
+    }
+
+    .flex-#{$breakpoint}-auto {
+      flex: 1 1 auto;
+    }
+
+    .flex-#{$breakpoint}-initial {
+      flex: 0 1 auto;
+    }
+
+    .flex-#{$breakpoint}-none {
+      flex: none;
+    }
+
+    // Order
+    .order-#{$breakpoint}-first {
+      order: -9999;
+    }
+
+    .order-#{$breakpoint}-last {
+      order: 9999;
+    }
+
+    @for $i from 0 through 12 {
+      .order-#{$breakpoint}-#{$i} {
+        order: $i;
+      }
+    }
+
+    // Equal width flex items
+    @for $i from 1 through 12 {
+      .flex-#{$breakpoint}-#{$i} {
+        flex: 0 0 calc(100% / 12 * #{$i});
+        max-width: calc(100% / 12 * #{$i});
+      }
+    }
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  // Prevent flex items from breaking across pages
+  .d-flex,
+  .d-inline-flex {
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+// Visually hidden but accessible to screen readers
+.flex-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================
+   IE11 Flexbox Fixes (Optional)
+   ============================================ */
+
+// Fix flex-basis in IE11
+.flex-ie-fix {
+  flex-basis: auto;
+}
+
+// Fix min-height in IE11
+.flex-column-ie-fix {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}

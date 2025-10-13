@@ -1,0 +1,728 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   Font sizes, weights, styles, and text utilities
+   ============================================ */
+
+/* ============================================
+   Responsive Font Sizes
+   ============================================ */
+
+.resp-h1 {
+  font-size: calc(1.5rem + 3vw);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.resp-h2 {
+  font-size: calc(1.375rem + 2.5vw);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.resp-h3 {
+  font-size: calc(1.25rem + 2vw);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.resp-h4 {
+  font-size: calc(1.125rem + 1.5vw);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.resp-h5 {
+  font-size: calc(1rem + 1vw);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.resp-h6 {
+  font-size: calc(0.875rem + 0.5vw);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.resp-p {
+  font-size: calc(1rem + 0.5vw);
+  line-height: 1.6;
+}
+
+/* ============================================
+   Fixed Font Sizes
+   ============================================ */
+
+// Extra small to extra large
+.text-xs {
+  font-size: 0.75rem; // 12px
+  line-height: 1.5;
+}
+
+.text-sm {
+  font-size: 0.875rem; // 14px
+  line-height: 1.5;
+}
+
+.text-base {
+  font-size: 1rem; // 16px
+  line-height: 1.6;
+}
+
+.text-lg {
+  font-size: 1.125rem; // 18px
+  line-height: 1.6;
+}
+
+.text-xl {
+  font-size: 1.25rem; // 20px
+  line-height: 1.6;
+}
+
+.text-2xl {
+  font-size: 1.5rem; // 24px
+  line-height: 1.5;
+}
+
+.text-3xl {
+  font-size: 1.875rem; // 30px
+  line-height: 1.4;
+}
+
+.text-4xl {
+  font-size: 2.25rem; // 36px
+  line-height: 1.3;
+}
+
+.text-5xl {
+  font-size: 3rem; // 48px
+  line-height: 1.2;
+}
+
+.text-6xl {
+  font-size: 3.75rem; // 60px
+  line-height: 1.1;
+}
+
+.text-7xl {
+  font-size: 4.5rem; // 72px
+  line-height: 1.1;
+}
+
+.text-8xl {
+  font-size: 6rem; // 96px
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 8rem; // 128px
+  line-height: 1;
+}
+
+/* ============================================
+   Font Weights
+   ============================================ */
+
+.fw-thin {
+  font-weight: 100;
+}
+
+.fw-extralight {
+  font-weight: 200;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.fw-extrabold {
+  font-weight: 800;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+// Loop for exact font weights (100-900)
+@for $weight from 1 through 9 {
+  .fw-#{$weight * 100} {
+    font-weight: $weight * 100;
+  }
+}
+
+/* ============================================
+   Font Styles
+   ============================================ */
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-normal {
+  font-style: normal;
+}
+
+.font-oblique {
+  font-style: oblique;
+}
+
+/* ============================================
+   Line Heights
+   ============================================ */
+
+.leading-none {
+  line-height: 1;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-snug {
+  line-height: 1.375;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
+// Numeric line heights
+@for $i from 1 through 10 {
+  .leading-#{$i} {
+    line-height: $i * 0.25;
+  }
+}
+
+/* ============================================
+   Letter Spacing (Tracking)
+   ============================================ */
+
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.tracking-normal {
+  letter-spacing: 0;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   Text Horizontal Alignment
+   ============================================ */
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+/* ============================================
+   Text Vertical Alignment
+   ============================================ */
+
+.align-baseline {
+  vertical-align: baseline;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-text-top {
+  vertical-align: text-top;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.align-sub {
+  vertical-align: sub;
+}
+
+.align-super {
+  vertical-align: super;
+}
+
+/* ============================================
+   Text Transformations
+   ============================================ */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-normal-case {
+  text-transform: none;
+}
+
+/* ============================================
+   Text Decorations
+   ============================================ */
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-overline {
+  text-decoration: overline;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.text-no-underline {
+  text-decoration: none;
+}
+
+/* Text Decoration Style */
+.decoration-solid {
+  text-decoration-style: solid;
+}
+
+.decoration-double {
+  text-decoration-style: double;
+}
+
+.decoration-dotted {
+  text-decoration-style: dotted;
+}
+
+.decoration-dashed {
+  text-decoration-style: dashed;
+}
+
+.decoration-wavy {
+  text-decoration-style: wavy;
+}
+
+/* Text Decoration Thickness */
+.decoration-auto {
+  text-decoration-thickness: auto;
+}
+
+.decoration-from-font {
+  text-decoration-thickness: from-font;
+}
+
+.decoration-0 {
+  text-decoration-thickness: 0px;
+}
+
+.decoration-1 {
+  text-decoration-thickness: 1px;
+}
+
+.decoration-2 {
+  text-decoration-thickness: 2px;
+}
+
+.decoration-4 {
+  text-decoration-thickness: 4px;
+}
+
+.decoration-8 {
+  text-decoration-thickness: 8px;
+}
+
+/* ============================================
+   Text Overflow & Wrapping
+   ============================================ */
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-clip {
+  text-overflow: clip;
+}
+
+/* Word Break */
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.break-keep {
+  word-break: keep-all;
+}
+
+/* ============================================
+   White Space
+   ============================================ */
+
+.whitespace-normal {
+  white-space: normal;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.whitespace-pre {
+  white-space: pre;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.whitespace-break-spaces {
+  white-space: break-spaces;
+}
+
+/* ============================================
+   Text Indentation
+   ============================================ */
+
+@for $i from 0 through 10 {
+  .indent-#{$i} {
+    text-indent: #{$i * 0.5}rem;
+  }
+}
+
+/* ============================================
+   Font Families
+   ============================================ */
+
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: "Courier New", Courier, monospace, "SF Mono", Monaco,
+    "Cascadia Code", "Roboto Mono", "Source Code Pro";
+}
+
+/* ============================================
+   List Styles
+   ============================================ */
+
+.list-none {
+  padding: 0;
+  list-style: none;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
+.list-circle {
+  list-style-type: circle;
+}
+
+.list-square {
+  list-style-type: square;
+}
+
+.list-decimal {
+  list-style-type: decimal;
+}
+
+.list-decimal-zero {
+  list-style-type: decimal-leading-zero;
+}
+
+.list-lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+.list-upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.list-lower-roman {
+  list-style-type: lower-roman;
+}
+
+.list-upper-roman {
+  list-style-type: upper-roman;
+}
+
+.list-lower-greek {
+  list-style-type: lower-greek;
+}
+
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-outside {
+  list-style-position: outside;
+}
+
+// Deprecated aliases (backwards compatibility)
+.list-style-none {
+  padding: 0;
+  list-style: none;
+}
+
+.list-style-disc {
+  list-style: disc;
+}
+
+.list-style-circle {
+  list-style: circle;
+}
+
+.list-style-square {
+  list-style: square;
+}
+
+.list-style-decimal {
+  list-style: decimal;
+}
+
+.list-style-lower-alpha {
+  list-style: lower-alpha;
+}
+
+.list-style-upper-alpha {
+  list-style: upper-alpha;
+}
+
+.list-style-lower-roman {
+  list-style: lower-roman;
+}
+
+.list-style-upper-roman {
+  list-style: upper-roman;
+}
+
+.list-style-inherit {
+  list-style: inherit;
+}
+
+/* ============================================
+   Text Shadow
+   ============================================ */
+
+.text-shadow-none {
+  text-shadow: none;
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-md {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-xl {
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   Writing Mode & Direction
+   ============================================ */
+
+.writing-mode-horizontal {
+  writing-mode: horizontal-tb;
+}
+
+.writing-mode-vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+.writing-mode-vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+.text-orientation-mixed {
+  text-orientation: mixed;
+}
+
+.text-orientation-upright {
+  text-orientation: upright;
+}
+
+.direction-ltr {
+  direction: ltr;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+
+/* ============================================
+   Hyphens
+   ============================================ */
+
+.hyphens-none {
+  hyphens: none;
+}
+
+.hyphens-manual {
+  hyphens: manual;
+}
+
+.hyphens-auto {
+  hyphens: auto;
+}
+
+/* ============================================
+   User Select
+   ============================================ */
+
+.select-none {
+  user-select: none;
+}
+
+.select-text {
+  user-select: text;
+}
+
+.select-all {
+  user-select: all;
+}
+
+.select-auto {
+  user-select: auto;
+}
+
+/* ============================================
+   Content
+   ============================================ */
+
+.content-none {
+  content: none;
+}
+
+/* ============================================
+   Responsive Typography Utilities
+   ============================================ */
+
+$breakpoints: (
+  "sm": 768px,
+  "md": 992px,
+  "lg": 1200px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    .text-#{$breakpoint}-left {
+      text-align: left;
+    }
+
+    .text-#{$breakpoint}-center {
+      text-align: center;
+    }
+
+    .text-#{$breakpoint}-right {
+      text-align: right;
+    }
+
+    .text-#{$breakpoint}-justify {
+      text-align: justify;
+    }
+  }
+}

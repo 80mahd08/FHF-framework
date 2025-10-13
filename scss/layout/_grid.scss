@@ -1,0 +1,772 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   GRID SYSTEM UTILITIES
+   CSS Grid layout system
+   ============================================ */
+
+/* ============================================
+   Display Grid
+   ============================================ */
+
+.d-grid {
+  display: grid;
+}
+
+.d-inline-grid {
+  display: inline-grid;
+}
+
+/* ============================================
+   Grid Template Columns
+   ============================================ */
+
+// Equal columns (1-12)
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+// Special column patterns
+.grid-cols-none {
+  grid-template-columns: none;
+}
+
+.grid-cols-subgrid {
+  grid-template-columns: subgrid;
+}
+
+/* ============================================
+   Grid Template Rows
+   ============================================ */
+
+// Equal rows (1-12)
+@for $i from 1 through 12 {
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+// Special row patterns
+.grid-rows-none {
+  grid-template-rows: none;
+}
+
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+}
+
+/* ============================================
+   Grid Column Span
+   ============================================ */
+
+.col-auto {
+  grid-column: auto;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+/* ============================================
+   Grid Column Start
+   ============================================ */
+
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+}
+
+/* ============================================
+   Grid Column End
+   ============================================ */
+
+.col-end-auto {
+  grid-column-end: auto;
+}
+
+@for $i from 1 through 13 {
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+}
+
+/* ============================================
+   Grid Row Span
+   ============================================ */
+
+.row-auto {
+  grid-row: auto;
+}
+
+.row-span-full {
+  grid-row: 1 / -1;
+}
+
+@for $i from 1 through 12 {
+  .row-span-#{$i} {
+    grid-row: span #{$i} / span #{$i};
+  }
+}
+
+/* ============================================
+   Grid Row Start
+   ============================================ */
+
+.row-start-auto {
+  grid-row-start: auto;
+}
+
+@for $i from 1 through 13 {
+  .row-start-#{$i} {
+    grid-row-start: #{$i};
+  }
+}
+
+/* ============================================
+   Grid Row End
+   ============================================ */
+
+.row-end-auto {
+  grid-row-end: auto;
+}
+
+@for $i from 1 through 13 {
+  .row-end-#{$i} {
+    grid-row-end: #{$i};
+  }
+}
+
+/* ============================================
+   Grid Auto Flow
+   ============================================ */
+
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
+.grid-flow-dense {
+  grid-auto-flow: dense;
+}
+
+.grid-flow-row-dense {
+  grid-auto-flow: row dense;
+}
+
+.grid-flow-col-dense {
+  grid-auto-flow: column dense;
+}
+
+/* ============================================
+   Grid Auto Columns
+   ============================================ */
+
+.auto-cols-auto {
+  grid-auto-columns: auto;
+}
+
+.auto-cols-min {
+  grid-auto-columns: min-content;
+}
+
+.auto-cols-max {
+  grid-auto-columns: max-content;
+}
+
+.auto-cols-fr {
+  grid-auto-columns: minmax(0, 1fr);
+}
+
+/* ============================================
+   Grid Auto Rows
+   ============================================ */
+
+.auto-rows-auto {
+  grid-auto-rows: auto;
+}
+
+.auto-rows-min {
+  grid-auto-rows: min-content;
+}
+
+.auto-rows-max {
+  grid-auto-rows: max-content;
+}
+
+.auto-rows-fr {
+  grid-auto-rows: minmax(0, 1fr);
+}
+
+/* ============================================
+   Gap (Grid Spacing)
+   ============================================ */
+
+.gap-0 {
+  gap: 0;
+}
+
+@for $i from 1 through 20 {
+  .gap-#{$i} {
+    gap: #{$i * 0.25}rem;
+  }
+}
+
+// Column gap (horizontal spacing)
+.gap-x-0 {
+  column-gap: 0;
+}
+
+@for $i from 1 through 20 {
+  .gap-x-#{$i} {
+    column-gap: #{$i * 0.25}rem;
+  }
+}
+
+// Row gap (vertical spacing)
+.gap-y-0 {
+  row-gap: 0;
+}
+
+@for $i from 1 through 20 {
+  .gap-y-#{$i} {
+    row-gap: #{$i * 0.25}rem;
+  }
+}
+
+/* ============================================
+   Justify Items (Horizontal Alignment)
+   ============================================ */
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+/* ============================================
+   Justify Self (Individual Item Horizontal)
+   ============================================ */
+
+.justify-self-auto {
+  justify-self: auto;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+/* ============================================
+   Align Items (Vertical Alignment)
+   ============================================ */
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+.align-items-baseline {
+  align-items: baseline;
+}
+
+/* ============================================
+   Align Self (Individual Item Vertical)
+   ============================================ */
+
+.align-self-auto {
+  align-self: auto;
+}
+
+.align-self-start {
+  align-self: start;
+}
+
+.align-self-end {
+  align-self: end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+.align-self-baseline {
+  align-self: baseline;
+}
+
+/* ============================================
+   Place Items (Shorthand)
+   ============================================ */
+
+.place-items-start {
+  place-items: start;
+}
+
+.place-items-end {
+  place-items: end;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.place-items-stretch {
+  place-items: stretch;
+}
+
+/* ============================================
+   Place Self (Shorthand)
+   ============================================ */
+
+.place-self-auto {
+  place-self: auto;
+}
+
+.place-self-start {
+  place-self: start;
+}
+
+.place-self-end {
+  place-self: end;
+}
+
+.place-self-center {
+  place-self: center;
+}
+
+.place-self-stretch {
+  place-self: stretch;
+}
+
+/* ============================================
+   Place Content (Shorthand)
+   ============================================ */
+
+.place-content-start {
+  place-content: start;
+}
+
+.place-content-end {
+  place-content: end;
+}
+
+.place-content-center {
+  place-content: center;
+}
+
+.place-content-between {
+  place-content: space-between;
+}
+
+.place-content-around {
+  place-content: space-around;
+}
+
+.place-content-evenly {
+  place-content: space-evenly;
+}
+
+.place-content-stretch {
+  place-content: stretch;
+}
+
+/* ============================================
+   Responsive Grid with Auto-Fill
+   ============================================ */
+
+// Auto-fill: Creates as many columns as will fit
+@for $i from 100 through 500 {
+  @if $i % 50 == 0 {
+    .grid-auto-fill-#{$i} {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(#{$i}px, 1fr));
+    }
+  }
+}
+
+// Legacy support (from your original code)
+@for $i from 100 through 500 {
+  .respGridFill-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(#{$i}px, 1fr));
+  }
+}
+
+/* ============================================
+   Responsive Grid with Auto-Fit
+   ============================================ */
+
+// Auto-fit: Fits columns to available space
+@for $i from 100 through 500 {
+  @if $i % 50 == 0 {
+    .grid-auto-fit-#{$i} {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(#{$i}px, 1fr));
+    }
+  }
+}
+
+// Legacy support (from your original code)
+@for $i from 100 through 500 {
+  .respGridFit-#{$i} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(#{$i}px, 1fr));
+  }
+}
+
+/* ============================================
+   Common Grid Patterns
+   ============================================ */
+
+// Sidebar layout
+.grid-sidebar-left {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-sidebar-right {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Two column layout
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Three column layout
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Four column layout
+.grid-4-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Holy Grail Layout
+.grid-holy-grail {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav content aside"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 1rem;
+
+  @media (max-width: 992px) {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+// Masonry-like layout
+.grid-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 10px;
+  gap: 1rem;
+}
+
+// Dashboard layout
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+// Card grid
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+// Featured + grid layout
+.grid-featured {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  > :first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    > :first-child {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+
+    > :first-child {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+}
+
+/* ============================================
+   Responsive Grid Utilities
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Display
+    .d-#{$breakpoint}-grid {
+      display: grid;
+    }
+
+    .d-#{$breakpoint}-inline-grid {
+      display: inline-grid;
+    }
+
+    // Grid columns
+    @for $i from 1 through 12 {
+      .grid-cols-#{$breakpoint}-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+      }
+    }
+
+    // Grid rows
+    @for $i from 1 through 12 {
+      .grid-rows-#{$breakpoint}-#{$i} {
+        grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+      }
+    }
+
+    // Column span
+    .col-#{$breakpoint}-auto {
+      grid-column: auto;
+    }
+
+    .col-#{$breakpoint}-span-full {
+      grid-column: 1 / -1;
+    }
+
+    @for $i from 1 through 12 {
+      .col-#{$breakpoint}-span-#{$i} {
+        grid-column: span #{$i} / span #{$i};
+      }
+    }
+
+    // Row span
+    .row-#{$breakpoint}-auto {
+      grid-row: auto;
+    }
+
+    .row-#{$breakpoint}-span-full {
+      grid-row: 1 / -1;
+    }
+
+    @for $i from 1 through 12 {
+      .row-#{$breakpoint}-span-#{$i} {
+        grid-row: span #{$i} / span #{$i};
+      }
+    }
+
+    // Grid flow
+    .grid-flow-#{$breakpoint}-row {
+      grid-auto-flow: row;
+    }
+
+    .grid-flow-#{$breakpoint}-col {
+      grid-auto-flow: column;
+    }
+
+    .grid-flow-#{$breakpoint}-dense {
+      grid-auto-flow: dense;
+    }
+  }
+}
+
+/* ============================================
+   Grid Areas (Named Areas)
+   ============================================ */
+
+// Header area
+.grid-area-header {
+  grid-area: header;
+}
+
+// Nav area
+.grid-area-nav {
+  grid-area: nav;
+}
+
+// Content area
+.grid-area-content {
+  grid-area: content;
+}
+
+// Aside area
+.grid-area-aside {
+  grid-area: aside;
+}
+
+// Footer area
+.grid-area-footer {
+  grid-area: footer;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .d-grid,
+  .d-inline-grid {
+    page-break-inside: avoid;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Grid Debugging (Optional)
+   ============================================ */
+
+.grid-debug {
+  > * {
+    outline: 1px solid red;
+    background-color: rgba(255, 0, 0, 0.05);
+  }
+}
+
+.grid-debug-numbers {
+  > * {
+    position: relative;
+
+    &::before {
+      content: counter(item);
+      counter-increment: item;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background: red;
+      color: white;
+      padding: 2px 6px;
+      font-size: 10px;
+      border-radius: 3px;
+      z-index: 10;
+    }
+  }
+
+  counter-reset: item;
+}
