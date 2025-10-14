@@ -1827,7 +1827,7 @@ $colors: (
     .bg-#{to-valid-class-name($color-name)}-#{$shade} {
       background-color: $value;
     }
-    .b-#{to-valid-class-name($color-name)}-#{$shade} {
+    .border-#{to-valid-class-name($color-name)}-#{$shade} {
       border-color: $value;
     }
   }
