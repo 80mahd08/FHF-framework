@@ -1,0 +1,774 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   DISPLAY UTILITIES
+   Display types and visibility control
+   ============================================ */
+
+/* ============================================
+   Display Types
+   ============================================ */
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-contents {
+  display: contents;
+}
+
+.d-flow-root {
+  display: flow-root;
+}
+
+/* ============================================
+   Flex Display
+   ============================================ */
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+/* ============================================
+   Grid Display
+   ============================================ */
+
+.d-grid {
+  display: grid;
+}
+
+.d-inline-grid {
+  display: inline-grid;
+}
+
+/* ============================================
+   Table Display
+   ============================================ */
+
+.d-table {
+  display: table;
+}
+
+.d-table-row {
+  display: table-row;
+}
+
+.d-table-cell {
+  display: table-cell;
+}
+
+.d-table-caption {
+  display: table-caption;
+}
+
+.d-table-column {
+  display: table-column;
+}
+
+.d-table-column-group {
+  display: table-column-group;
+}
+
+.d-table-header-group {
+  display: table-header-group;
+}
+
+.d-table-footer-group {
+  display: table-footer-group;
+}
+
+.d-table-row-group {
+  display: table-row-group;
+}
+
+/* ============================================
+   List Display
+   ============================================ */
+
+.d-list-item {
+  display: list-item;
+}
+
+/* ============================================
+   Other Display Types
+   ============================================ */
+
+.d-run-in {
+  display: run-in;
+}
+
+.d-ruby {
+  display: ruby;
+}
+
+.d-ruby-text {
+  display: ruby-text;
+}
+
+.d-ruby-base {
+  display: ruby-base;
+}
+
+/* ============================================
+   Display: None (Hidden)
+   ============================================ */
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+/* ============================================
+   Pointerless / Pointer Events
+   ============================================ */
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+/* ============================================
+   Cursor
+   ============================================ */
+
+.cursor-auto {
+  cursor: auto;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-wait {
+  cursor: wait;
+}
+
+.cursor-text {
+  cursor: text;
+}
+
+.cursor-move {
+  cursor: move;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.cursor-help {
+  cursor: help;
+}
+
+.cursor-crosshair {
+  cursor: crosshair;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grabbing {
+  cursor: grabbing;
+}
+
+.cursor-cell {
+  cursor: cell;
+}
+
+.cursor-col-resize {
+  cursor: col-resize;
+}
+
+.cursor-row-resize {
+  cursor: row-resize;
+}
+
+.cursor-n-resize {
+  cursor: n-resize;
+}
+
+.cursor-e-resize {
+  cursor: e-resize;
+}
+
+.cursor-s-resize {
+  cursor: s-resize;
+}
+
+.cursor-w-resize {
+  cursor: w-resize;
+}
+
+.cursor-ne-resize {
+  cursor: ne-resize;
+}
+
+.cursor-nw-resize {
+  cursor: nw-resize;
+}
+
+.cursor-se-resize {
+  cursor: se-resize;
+}
+
+.cursor-sw-resize {
+  cursor: sw-resize;
+}
+
+.cursor-ew-resize {
+  cursor: ew-resize;
+}
+
+.cursor-ns-resize {
+  cursor: ns-resize;
+}
+
+.cursor-nesw-resize {
+  cursor: nesw-resize;
+}
+
+.cursor-nwse-resize {
+  cursor: nwse-resize;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
+}
+
+.cursor-zoom-out {
+  cursor: zoom-out;
+}
+
+/* ============================================
+   Appearance / Input Styling
+   ============================================ */
+
+.appearance-none {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.appearance-auto {
+  appearance: auto;
+}
+
+/* ============================================
+   Resize
+   ============================================ */
+
+.resize {
+  resize: both;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.resize-x {
+  resize: horizontal;
+}
+
+.resize-y {
+  resize: vertical;
+}
+
+/* ============================================
+   User Select
+   ============================================ */
+
+.select-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.select-text {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+.select-all {
+  user-select: all;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+}
+
+.select-auto {
+  user-select: auto;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+}
+
+/* ============================================
+   Touch Action
+   ============================================ */
+
+.touch-auto {
+  touch-action: auto;
+}
+
+.touch-none {
+  touch-action: none;
+}
+
+.touch-pan-x {
+  touch-action: pan-x;
+}
+
+.touch-pan-y {
+  touch-action: pan-y;
+}
+
+.touch-pan-left {
+  touch-action: pan-left;
+}
+
+.touch-pan-right {
+  touch-action: pan-right;
+}
+
+.touch-pan-up {
+  touch-action: pan-up;
+}
+
+.touch-pan-down {
+  touch-action: pan-down;
+}
+
+.touch-pinch-zoom {
+  touch-action: pinch-zoom;
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* ============================================
+   Will Change
+   ============================================ */
+
+.will-change-auto {
+  will-change: auto;
+}
+
+.will-change-scroll {
+  will-change: scroll-position;
+}
+
+.will-change-contents {
+  will-change: contents;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* ============================================
+   User Drag
+   ============================================ */
+
+.user-drag-auto {
+  user-drag: auto;
+  -webkit-user-drag: auto;
+}
+
+.user-drag-none {
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+
+.user-drag-element {
+  user-drag: element;
+  -webkit-user-drag: element;
+}
+
+/* ============================================
+   Accent Color
+   ============================================ */
+
+.accent-current {
+  accent-color: currentColor;
+}
+
+/* ============================================
+   Carets Color
+   ============================================ */
+
+.caret-current {
+  caret-color: currentColor;
+}
+
+.caret-transparent {
+  caret-color: transparent;
+}
+
+.caret-auto {
+  caret-color: auto;
+}
+
+/* ============================================
+   Scroll Behavior
+   ============================================ */
+
+.scroll-auto {
+  scroll-behavior: auto;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   Scroll Snap
+   ============================================ */
+
+.snap-none {
+  scroll-snap-type: none;
+}
+
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-both {
+  scroll-snap-type: both mandatory;
+}
+
+.snap-x-proximity {
+  scroll-snap-type: x proximity;
+}
+
+.snap-y-proximity {
+  scroll-snap-type: y proximity;
+}
+
+.snap-both-proximity {
+  scroll-snap-type: both proximity;
+}
+
+.snap-align-none {
+  scroll-snap-align: none;
+}
+
+.snap-align-start {
+  scroll-snap-align: start;
+}
+
+.snap-align-end {
+  scroll-snap-align: end;
+}
+
+.snap-align-center {
+  scroll-snap-align: center;
+}
+
+.snap-stop-always {
+  scroll-snap-stop: always;
+}
+
+.snap-stop-normal {
+  scroll-snap-stop: normal;
+}
+
+/* ============================================
+   Mix Blend Mode
+   ============================================ */
+
+.mix-blend-normal {
+  mix-blend-mode: normal;
+}
+
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.mix-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.mix-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.mix-blend-darken {
+  mix-blend-mode: darken;
+}
+
+.mix-blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+.mix-blend-color-dodge {
+  mix-blend-mode: color-dodge;
+}
+
+.mix-blend-color-burn {
+  mix-blend-mode: color-burn;
+}
+
+.mix-blend-hard-light {
+  mix-blend-mode: hard-light;
+}
+
+.mix-blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+.mix-blend-difference {
+  mix-blend-mode: difference;
+}
+
+.mix-blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.mix-blend-hue {
+  mix-blend-mode: hue;
+}
+
+.mix-blend-saturation {
+  mix-blend-mode: saturation;
+}
+
+.mix-blend-color {
+  mix-blend-mode: color;
+}
+
+.mix-blend-luminosity {
+  mix-blend-mode: luminosity;
+}
+
+.mix-blend-plus-lighter {
+  mix-blend-mode: plus-lighter;
+}
+
+/* ============================================
+   Print Display
+   ============================================ */
+
+.print-hidden {
+  display: none;
+}
+
+.print-block {
+  display: none;
+}
+
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-block {
+    display: block !important;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Responsive Display Utilities
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Display types
+    .d-#{$breakpoint}-block {
+      display: block;
+    }
+
+    .d-#{$breakpoint}-inline-block {
+      display: inline-block;
+    }
+
+    .d-#{$breakpoint}-inline {
+      display: inline;
+    }
+
+    .d-#{$breakpoint}-none {
+      display: none;
+    }
+
+    .d-#{$breakpoint}-flex {
+      display: flex;
+    }
+
+    .d-#{$breakpoint}-inline-flex {
+      display: inline-flex;
+    }
+
+    .d-#{$breakpoint}-grid {
+      display: grid;
+    }
+
+    .d-#{$breakpoint}-inline-grid {
+      display: inline-grid;
+    }
+
+    .d-#{$breakpoint}-table {
+      display: table;
+    }
+
+    .d-#{$breakpoint}-table-row {
+      display: table-row;
+    }
+
+    .d-#{$breakpoint}-table-cell {
+      display: table-cell;
+    }
+
+    .d-#{$breakpoint}-table-caption {
+      display: table-caption;
+    }
+
+    // Visibility
+    .hidden-#{$breakpoint} {
+      display: none;
+    }
+
+    .visible-#{$breakpoint} {
+      display: block;
+    }
+
+    // Overflow
+    .overflow-#{$breakpoint}-auto {
+      overflow: auto;
+    }
+
+    .overflow-#{$breakpoint}-hidden {
+      overflow: hidden;
+    }
+
+    .overflow-#{$breakpoint}-scroll {
+      overflow: scroll;
+    }
+
+    // Cursor
+    .cursor-#{$breakpoint}-pointer {
+      cursor: pointer;
+    }
+
+    .cursor-#{$breakpoint}-default {
+      cursor: default;
+    }
+  }
+}
+
+/* ============================================
+   Legacy Support
+   ============================================ */
+
+// From your original base.scss
+.visible-xs {
+  display: block !important;
+}
+
+.hidden-xs {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .visible-sm {
+    display: block !important;
+  }
+
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .visible-md {
+    display: block !important;
+  }
+
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Object Fit (for images/videos)
+   ============================================ */
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-fill {
+  object-fit: fill;
+}
+
+.object-none {
+  object-fit: none;
+}
+
+.object-scale-down {
+  object-fit: scale-down;
+}

@@ -1,0 +1,485 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   OBJECT FIT UTILITIES
+   Image and video scaling utilities
+   ============================================ */
+
+/* ============================================
+   Object Fit
+   ============================================ */
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-fill {
+  object-fit: fill;
+}
+
+.object-none {
+  object-fit: none;
+}
+
+.object-scale-down {
+  object-fit: scale-down;
+}
+
+/* ============================================
+   Object Position
+   ============================================ */
+
+// Center position
+.object-center {
+  object-position: center;
+}
+
+// Top positions
+.object-top {
+  object-position: top;
+}
+
+.object-top-left {
+  object-position: top left;
+}
+
+.object-top-right {
+  object-position: top right;
+}
+
+// Bottom positions
+.object-bottom {
+  object-position: bottom;
+}
+
+.object-bottom-left {
+  object-position: bottom left;
+}
+
+.object-bottom-right {
+  object-position: bottom right;
+}
+
+// Left/Right positions
+.object-left {
+  object-position: left;
+}
+
+.object-right {
+  object-position: right;
+}
+
+// Legacy/alternative naming
+.object-left-top {
+  object-position: left top;
+}
+
+.object-right-top {
+  object-position: right top;
+}
+
+.object-left-bottom {
+  object-position: left bottom;
+}
+
+.object-right-bottom {
+  object-position: right bottom;
+}
+
+/* ============================================
+   Percentage-based Object Position
+   ============================================ */
+
+@for $i from 0 through 100 {
+  @if $i % 25 == 0 {
+    .object-pos-#{$i}p {
+      object-position: #{$i}#{"%"} #{$i}#{"%"};
+    }
+  }
+}
+
+/* ============================================
+   Responsive Object Fit
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Object fit
+    .object-#{$breakpoint}-contain {
+      object-fit: contain;
+    }
+
+    .object-#{$breakpoint}-cover {
+      object-fit: cover;
+    }
+
+    .object-#{$breakpoint}-fill {
+      object-fit: fill;
+    }
+
+    .object-#{$breakpoint}-none {
+      object-fit: none;
+    }
+
+    .object-#{$breakpoint}-scale-down {
+      object-fit: scale-down;
+    }
+
+    // Object position
+    .object-#{$breakpoint}-center {
+      object-position: center;
+    }
+
+    .object-#{$breakpoint}-top {
+      object-position: top;
+    }
+
+    .object-#{$breakpoint}-bottom {
+      object-position: bottom;
+    }
+
+    .object-#{$breakpoint}-left {
+      object-position: left;
+    }
+
+    .object-#{$breakpoint}-right {
+      object-position: right;
+    }
+
+    .object-#{$breakpoint}-top-left {
+      object-position: top left;
+    }
+
+    .object-#{$breakpoint}-top-right {
+      object-position: top right;
+    }
+
+    .object-#{$breakpoint}-bottom-left {
+      object-position: bottom left;
+    }
+
+    .object-#{$breakpoint}-bottom-right {
+      object-position: bottom right;
+    }
+  }
+}
+
+/* ============================================
+   Image Utilities (Common Patterns)
+   ============================================ */
+
+// Responsive image (width 100%, auto height)
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Fluid image (max-width 100%)
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Thumbnail image with border and padding
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+// Circular image
+.img-circle {
+  border-radius: 50%;
+}
+
+// Rounded image
+.img-rounded {
+  border-radius: 0.5rem;
+}
+
+/* ============================================
+   Video Utilities
+   ============================================ */
+
+// Responsive video wrapper
+.video-responsive {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; // 16:9 aspect ratio
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// 16:9 aspect ratio
+.video-responsive-16-9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// 4:3 aspect ratio
+.video-responsive-4-3 {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// 1:1 aspect ratio
+.video-responsive-1-1 {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+// 21:9 aspect ratio
+.video-responsive-21-9 {
+  position: relative;
+  width: 100%;
+  padding-top: 42.857%;
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+/* ============================================
+   Background Attachment & Sizing
+   ============================================ */
+
+// Background attachment
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-scroll {
+  background-attachment: scroll;
+}
+
+.bg-local {
+  background-attachment: local;
+}
+
+// Background size
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-auto {
+  background-size: auto;
+}
+
+// Background position
+.bg-center {
+  background-position: center;
+}
+
+.bg-top {
+  background-position: top;
+}
+
+.bg-bottom {
+  background-position: bottom;
+}
+
+.bg-left {
+  background-position: left;
+}
+
+.bg-right {
+  background-position: right;
+}
+
+.bg-top-left {
+  background-position: top left;
+}
+
+.bg-top-right {
+  background-position: top right;
+}
+
+.bg-bottom-left {
+  background-position: bottom left;
+}
+
+.bg-bottom-right {
+  background-position: bottom right;
+}
+
+// Background repeat
+.bg-repeat {
+  background-repeat: repeat;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y;
+}
+
+.bg-repeat-round {
+  background-repeat: round;
+}
+
+.bg-repeat-space {
+  background-repeat: space;
+}
+
+// Background clip
+.bg-clip-border {
+  background-clip: border-box;
+}
+
+.bg-clip-padding {
+  background-clip: padding-box;
+}
+
+.bg-clip-content {
+  background-clip: content-box;
+}
+
+.bg-clip-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  // Disable background attachments for print
+  .bg-fixed {
+    background-attachment: scroll !important;
+  }
+
+  // Ensure images print properly
+  img,
+  .img-responsive,
+  .img-fluid {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  // Hide videos in print
+  .video-responsive,
+  .video-responsive-16-9,
+  .video-responsive-4-3,
+  .video-responsive-1-1,
+  .video-responsive-21-9 {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Accessibility
+   ============================================ */
+
+// Ensure images have proper alt text semantics
+img[alt=""],
+img:not([alt]) {
+  outline: 2px dashed #ff0000;
+}
+
+// Responsive images with srcset support
+picture {
+  display: block;
+}
+
+/* ============================================
+   Legacy Support
+   ============================================ */
+
+// From your original display.scss
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.object-fill {
+  object-fit: fill;
+}
+
+.object-none {
+  object-fit: none;
+}
+
+.object-scale-down {
+  object-fit: scale-down;
+}

@@ -15,14 +15,16 @@
 @use "layout/container";
 @use "layout/grid";
 @use "layout/flexbox";
+@use "layout/borders";
 @use "layout/positioning";
 
 // 4. Utilities
 @use "utilities/spacing";
 @use "utilities/display";
-@use "utilities/borders";
-@use "utilities/object-fit";
+@use "utilities/shadows";
 @use "utilities/visibility";
+@use "utilities/colors";
+@use "utilities/sizing";
 
 // 5. Components (future)
 // @use 'components/buttons';

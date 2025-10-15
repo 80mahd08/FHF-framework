@@ -1,0 +1,931 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   VISIBILITY UTILITIES
+   Visibility, opacity, and display control
+   ============================================ */
+
+/* ============================================
+   Visibility Property
+   ============================================ */
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visibility-visible {
+  visibility: visible;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.visibility-collapse {
+  visibility: collapse;
+}
+
+/* ============================================
+   Display None / Hidden
+   ============================================ */
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.d-none {
+  display: none;
+}
+
+/* ============================================
+   Opacity
+   ============================================ */
+
+// Loop for complete opacity range (0-100)
+@for $i from 0 through 100 {
+  .opacity-#{$i} {
+    opacity: calc($i / 100);
+  }
+}
+
+/* ============================================
+   Opacity by Increments
+   ============================================ */
+
+
+
+/* ============================================
+   Overlay / Backdrop Opacity
+   ============================================ */
+
+.overlay-0 {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.overlay-25 {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.overlay-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-75 {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.overlay-100 {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+// Light overlays
+.overlay-light-25 {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.overlay-light-50 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.overlay-light-75 {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================
+   Overflow
+   ============================================ */
+
+// All sides
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-clip {
+  overflow: clip;
+}
+
+// X-axis (horizontal)
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-visible {
+  overflow-x: visible;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-x-clip {
+  overflow-x: clip;
+}
+
+// Y-axis (vertical)
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overflow-y-clip {
+  overflow-y: clip;
+}
+
+/* ============================================
+   Text Overflow
+   ============================================ */
+
+.text-overflow-clip {
+  text-overflow: clip;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================
+   Text Clipping / Truncation
+   ============================================ */
+
+// Single line truncate
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Multi-line clamps
+@for $i from 2 through 10 {
+  .line-clamp-#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: #{$i};
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.line-clamp-none {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* ============================================
+   Clipping Path (CSS Clip-Path)
+   ============================================ */
+
+.clip-none {
+  clip-path: none;
+}
+
+.clip-circle {
+  clip-path: circle(50%);
+}
+
+.clip-ellipse {
+  clip-path: ellipse(50% 50%);
+}
+
+.clip-inset {
+  clip-path: inset(10%);
+}
+
+.clip-polygon-triangle {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.clip-polygon-star {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+/* ============================================
+   Backdrop Filter
+   ============================================ */
+
+.backdrop-none {
+  backdrop-filter: none;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(2px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+}
+
+.backdrop-brightness-50 {
+  backdrop-filter: brightness(0.5);
+}
+
+.backdrop-brightness-75 {
+  backdrop-filter: brightness(0.75);
+}
+
+.backdrop-brightness-100 {
+  backdrop-filter: brightness(1);
+}
+
+.backdrop-brightness-125 {
+  backdrop-filter: brightness(1.25);
+}
+
+.backdrop-brightness-150 {
+  backdrop-filter: brightness(1.5);
+}
+
+.backdrop-contrast-50 {
+  backdrop-filter: contrast(0.5);
+}
+
+.backdrop-contrast-75 {
+  backdrop-filter: contrast(0.75);
+}
+
+.backdrop-contrast-100 {
+  backdrop-filter: contrast(1);
+}
+
+.backdrop-contrast-125 {
+  backdrop-filter: contrast(1.25);
+}
+
+.backdrop-contrast-150 {
+  backdrop-filter: contrast(1.5);
+}
+
+.backdrop-grayscale {
+  backdrop-filter: grayscale(100%);
+}
+
+.backdrop-grayscale-0 {
+  backdrop-filter: grayscale(0%);
+}
+
+.backdrop-invert {
+  backdrop-filter: invert(100%);
+}
+
+.backdrop-invert-0 {
+  backdrop-filter: invert(0%);
+}
+
+.backdrop-saturate-50 {
+  backdrop-filter: saturate(0.5);
+}
+
+.backdrop-saturate-100 {
+  backdrop-filter: saturate(1);
+}
+
+.backdrop-saturate-150 {
+  backdrop-filter: saturate(1.5);
+}
+
+.backdrop-saturate-200 {
+  backdrop-filter: saturate(2);
+}
+
+.backdrop-sepia {
+  backdrop-filter: sepia(100%);
+}
+
+.backdrop-sepia-0 {
+  backdrop-filter: sepia(0%);
+}
+
+.backdrop-hue-rotate-15 {
+  backdrop-filter: hue-rotate(15deg);
+}
+
+.backdrop-hue-rotate-30 {
+  backdrop-filter: hue-rotate(30deg);
+}
+
+.backdrop-hue-rotate-60 {
+  backdrop-filter: hue-rotate(60deg);
+}
+
+.backdrop-hue-rotate-90 {
+  backdrop-filter: hue-rotate(90deg);
+}
+
+/* ============================================
+   Pointer Events
+   ============================================ */
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+.pointer-events-all {
+  pointer-events: all;
+}
+
+/* ============================================
+   Tab Index / Focus
+   ============================================ */
+
+.focus-visible-ring {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.focus-none {
+  outline: none;
+}
+
+/* ============================================
+   Screen Reader Only (Accessibility)
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+/* ============================================
+   Skip Navigation
+   ============================================ */
+
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0066cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 9999;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+/* ============================================
+   Blur Filter
+   ============================================ */
+
+.blur-none {
+  filter: blur(0px);
+}
+
+.blur-sm {
+  filter: blur(2px);
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.blur-md {
+  filter: blur(8px);
+}
+
+.blur-lg {
+  filter: blur(12px);
+}
+
+.blur-xl {
+  filter: blur(16px);
+}
+
+.blur-2xl {
+  filter: blur(20px);
+}
+
+.blur-3xl {
+  filter: blur(24px);
+}
+
+/* ============================================
+   Brightness Filter
+   ============================================ */
+
+.brightness-50 {
+  filter: brightness(0.5);
+}
+
+.brightness-75 {
+  filter: brightness(0.75);
+}
+
+.brightness-100 {
+  filter: brightness(1);
+}
+
+.brightness-125 {
+  filter: brightness(1.25);
+}
+
+.brightness-150 {
+  filter: brightness(1.5);
+}
+
+.brightness-200 {
+  filter: brightness(2);
+}
+
+/* ============================================
+   Contrast Filter
+   ============================================ */
+
+.contrast-50 {
+  filter: contrast(0.5);
+}
+
+.contrast-75 {
+  filter: contrast(0.75);
+}
+
+.contrast-100 {
+  filter: contrast(1);
+}
+
+.contrast-125 {
+  filter: contrast(1.25);
+}
+
+.contrast-150 {
+  filter: contrast(1.5);
+}
+
+.contrast-200 {
+  filter: contrast(2);
+}
+
+/* ============================================
+   Grayscale Filter
+   ============================================ */
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.grayscale-0 {
+  filter: grayscale(0%);
+}
+
+/* ============================================
+   Hue Rotate Filter
+   ============================================ */
+
+.hue-rotate-0 {
+  filter: hue-rotate(0deg);
+}
+
+.hue-rotate-15 {
+  filter: hue-rotate(15deg);
+}
+
+.hue-rotate-30 {
+  filter: hue-rotate(30deg);
+}
+
+.hue-rotate-45 {
+  filter: hue-rotate(45deg);
+}
+
+.hue-rotate-60 {
+  filter: hue-rotate(60deg);
+}
+
+.hue-rotate-90 {
+  filter: hue-rotate(90deg);
+}
+
+.hue-rotate-180 {
+  filter: hue-rotate(180deg);
+}
+
+/* ============================================
+   Invert Filter
+   ============================================ */
+
+.invert {
+  filter: invert(100%);
+}
+
+.invert-0 {
+  filter: invert(0%);
+}
+
+/* ============================================
+   Saturate Filter
+   ============================================ */
+
+.saturate-0 {
+  filter: saturate(0%);
+}
+
+.saturate-50 {
+  filter: saturate(0.5);
+}
+
+.saturate-100 {
+  filter: saturate(1);
+}
+
+.saturate-150 {
+  filter: saturate(1.5);
+}
+
+.saturate-200 {
+  filter: saturate(2);
+}
+
+/* ============================================
+   Sepia Filter
+   ============================================ */
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.sepia-0 {
+  filter: sepia(0%);
+}
+
+/* ============================================
+   Drop Shadow Filter
+   ============================================ */
+
+.drop-shadow {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.drop-shadow-sm {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+}
+
+.drop-shadow-md {
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+.drop-shadow-lg {
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
+}
+
+.drop-shadow-xl {
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
+}
+
+.drop-shadow-2xl {
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.25));
+}
+
+.drop-shadow-none {
+  filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0));
+}
+
+/* ============================================
+   Responsive Visibility Utilities
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Visibility
+    .visible-#{$breakpoint} {
+      visibility: visible;
+    }
+
+    .invisible-#{$breakpoint} {
+      visibility: hidden;
+    }
+
+    .hidden-#{$breakpoint} {
+      display: none;
+    }
+
+    .show-#{$breakpoint} {
+      display: block;
+    }
+
+    // Opacity
+    .opacity-#{$breakpoint}-0 {
+      opacity: 0;
+    }
+
+    .opacity-#{$breakpoint}-50 {
+      opacity: 0.5;
+    }
+
+    .opacity-#{$breakpoint}-100 {
+      opacity: 1;
+    }
+
+    // Overflow
+    .overflow-#{$breakpoint}-auto {
+      overflow: auto;
+    }
+
+    .overflow-#{$breakpoint}-hidden {
+      overflow: hidden;
+    }
+
+    .overflow-#{$breakpoint}-scroll {
+      overflow: scroll;
+    }
+
+    .overflow-x-#{$breakpoint}-auto {
+      overflow-x: auto;
+    }
+
+    .overflow-x-#{$breakpoint}-hidden {
+      overflow-x: hidden;
+    }
+
+    .overflow-y-#{$breakpoint}-auto {
+      overflow-y: auto;
+    }
+
+    .overflow-y-#{$breakpoint}-hidden {
+      overflow-y: hidden;
+    }
+  }
+}
+
+/* ============================================
+   Legacy Support
+   ============================================ */
+
+// From your original base.scss
+.visible-xs {
+  display: block !important;
+}
+
+.hidden-xs {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .visible-sm {
+    display: block !important;
+  }
+
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .visible-md {
+    display: block !important;
+  }
+
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  // Show all hidden content in print
+  .hidden,
+  .hidden-print {
+    display: none !important;
+  }
+
+  .show,
+  .show-print {
+    display: block !important;
+  }
+
+  // Remove transparency for print
+  .opacity-0 {
+    opacity: 1 !important;
+  }
+
+  // Disable filters for print
+  .blur,
+  .blur-sm,
+  .blur-md,
+  .blur-lg,
+  .blur-xl,
+  .blur-2xl,
+  .blur-3xl,
+  .grayscale,
+  .sepia,
+  .invert {
+    filter: none !important;
+  }
+
+  // Show all truncated text
+  .line-clamp-1,
+  .line-clamp-2,
+  .line-clamp-3,
+  .line-clamp-4,
+  .line-clamp-5,
+  .line-clamp-6,
+  .line-clamp-7,
+  .line-clamp-8,
+  .line-clamp-9,
+  .line-clamp-10 {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+
+  .truncate {
+    white-space: normal !important;
+    text-overflow: unset !important;
+  }
+}
+
+/* ============================================
+   Disabled State
+   ============================================ */
+
+.disabled,
+:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ============================================
+   Common Visibility Patterns
+   ============================================ */
+
+// Show on hover
+.show-on-hover {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus-within {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Fade in animation
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Fade out animation
+.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// Visibility toggle
+.toggle-visibility {
+  &.hidden {
+    display: none;
+  }
+
+  &.visible {
+    display: block;
+  }
+}
+
+/* ============================================
+   Placeholder Visibility
+   ============================================ */
+
+.placeholder-shown {
+  &:placeholder-shown {
+    display: block;
+  }
+}
+
+.placeholder-hidden {
+  &:placeholder-shown {
+    display: none;
+  }
+}

@@ -49,15 +49,6 @@
   border-radius: 9999px; // Circle/pill shape
 }
 
-// Legacy support (from your original code)
-$borderRadiusCont: 5;
-@each $borderRName in $BordeRadiusNames {
-  .#{$borderRName} {
-    border-radius: #{$borderRadiusCont}px;
-  }
-  $borderRadiusCont: $borderRadiusCont + 20;
-}
-
 // Individual corner radius - Top
 .rounded-t-none {
   border-top-left-radius: 0;
@@ -515,40 +506,6 @@ $borderRadiusCont: 5;
   border-left-style: dotted;
 }
 
-// Legacy support with width (from your original code)
-$border-widths: 0 1px 2px 3px 4px 5px 6px 7px 8px 9px 10px;
-
-@each $size in $border-widths {
-  .b-solid-#{$size} {
-    border: $size solid #000;
-  }
-  .b-dashed-#{$size} {
-    border: $size dashed #000;
-  }
-  .b-dotted-#{$size} {
-    border: $size dotted #000;
-  }
-  .b-double-#{$size} {
-    border: $size double #000;
-  }
-  .b-groove-#{$size} {
-    border: $size groove #000;
-  }
-  .b-ridge-#{$size} {
-    border: $size ridge #000;
-  }
-  .b-inset-#{$size} {
-    border: $size inset #000;
-  }
-  .b-outset-#{$size} {
-    border: $size outset #000;
-  }
-}
-
-.b-none {
-  border: none;
-}
-
 /* ============================================
    Border Color (Basic Colors Only)
    Note: Full color palette generated from $colors variable
@@ -665,63 +622,6 @@ $border-widths: 0 1px 2px 3px 4px 5px 6px 7px 8px 9px 10px;
 
 .outline-current {
   outline-color: currentColor;
-}
-
-/* ============================================
-   Ring (Focus Rings)
-   ============================================ */
-
-.ring {
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-}
-
-.ring-0 {
-  box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.5);
-}
-
-.ring-1 {
-  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5);
-}
-
-.ring-2 {
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-}
-
-.ring-4 {
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
-}
-
-.ring-8 {
-  box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.5);
-}
-
-.ring-inset {
-  box-shadow: inset 0 0 0 3px rgba(59, 130, 246, 0.5);
-}
-
-// Ring offset
-.ring-offset-0 {
-  --ring-offset-width: 0px;
-  box-shadow: 0 0 0 var(--ring-offset-width) #fff,
-    0 0 0 calc(3px + var(--ring-offset-width)) rgba(59, 130, 246, 0.5);
-}
-
-.ring-offset-1 {
-  --ring-offset-width: 1px;
-  box-shadow: 0 0 0 var(--ring-offset-width) #fff,
-    0 0 0 calc(3px + var(--ring-offset-width)) rgba(59, 130, 246, 0.5);
-}
-
-.ring-offset-2 {
-  --ring-offset-width: 2px;
-  box-shadow: 0 0 0 var(--ring-offset-width) #fff,
-    0 0 0 calc(3px + var(--ring-offset-width)) rgba(59, 130, 246, 0.5);
-}
-
-.ring-offset-4 {
-  --ring-offset-width: 4px;
-  box-shadow: 0 0 0 var(--ring-offset-width) #fff,
-    0 0 0 calc(3px + var(--ring-offset-width)) rgba(59, 130, 246, 0.5);
 }
 
 /* ============================================

@@ -1,3 +1,0 @@
-sass ./scss/main.scss ./dist/main.css
-sass ./scss/main.scss ./dist/main.min.css --style=compressed
-echo "Build complete."

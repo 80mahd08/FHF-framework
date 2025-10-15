@@ -1,0 +1,761 @@
+@use "../tools/_variables" as *;
+@use "../tools/_functions" as *;
+@use "../tools/mixins" as *;
+
+/* ============================================
+   SIZING UTILITIES
+   Width, height, and dimension utilities
+   ============================================ */
+
+/* ============================================
+   Width
+   ============================================ */
+
+// Keyword values
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-min {
+  width: min-content;
+}
+
+.w-max {
+  width: max-content;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.w-none {
+  width: 0;
+}
+
+// Rem-based width (0.5rem increments, 1-20)
+@for $i from 1 through 20 {
+  .w-#{$i} {
+    width: #{$i * 0.5}rem;
+  }
+}
+
+// Percentage-based width (5% increments)
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .w-#{$i}p {
+      width: #{$i}#{"%"};
+    }
+  }
+}
+
+// Fraction-based width (for grids)
+@for $i from 1 through 12 {
+  .w-#{$i}\/#{12} {
+    width: calc(100% / 12 * #{$i});
+  }
+}
+
+// Additional fractions
+.w-1\/2 {
+  width: 50%;
+}
+.w-1\/3 {
+  width: calc(100% / 3);
+}
+.w-2\/3 {
+  width: calc(100% / 3 * 2);
+}
+.w-1\/4 {
+  width: 25%;
+}
+.w-3\/4 {
+  width: 75%;
+}
+.w-1\/5 {
+  width: 20%;
+}
+.w-2\/5 {
+  width: 40%;
+}
+.w-3\/5 {
+  width: 60%;
+}
+.w-4\/5 {
+  width: 80%;
+}
+.w-1\/6 {
+  width: calc(100% / 6);
+}
+.w-5\/6 {
+  width: calc(100% / 6 * 5);
+}
+
+// Pixel-based widths (common breakpoints)
+$pixel-widths: 50, 75, 100, 150, 200, 250, 300, 350, 400, 450, 500, 600, 700,
+  800, 900, 1000, 1200, 1400, 1600;
+@each $width in $pixel-widths {
+  .w-#{$width}px {
+    width: #{$width}px;
+  }
+}
+
+// Min/Max widths
+.min-w-0 {
+  min-width: 0;
+}
+
+.min-w-auto {
+  min-width: auto;
+}
+
+.min-w-full {
+  min-width: 100%;
+}
+
+.min-w-screen {
+  min-width: 100vw;
+}
+
+.min-w-min {
+  min-width: min-content;
+}
+
+.min-w-max {
+  min-width: max-content;
+}
+
+.min-w-fit {
+  min-width: fit-content;
+}
+
+@for $i from 1 through 20 {
+  .min-w-#{$i} {
+    min-width: #{$i * 0.5}rem;
+  }
+}
+
+@for $i from 0 through 100 {
+  @if $i % 10 == 0 {
+    .min-w-#{$i}p {
+      min-width: #{$i}#{"%"};
+    }
+  }
+}
+
+.max-w-none {
+  max-width: none;
+}
+
+.max-w-auto {
+  max-width: auto;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-screen {
+  max-width: 100vw;
+}
+
+.max-w-min {
+  max-width: min-content;
+}
+
+.max-w-max {
+  max-width: max-content;
+}
+
+.max-w-fit {
+  max-width: fit-content;
+}
+
+.max-w-prose {
+  max-width: 65ch; // Optimal reading width
+}
+
+@for $i from 1 through 20 {
+  .max-w-#{$i} {
+    max-width: #{$i * 0.5}rem;
+  }
+}
+
+@for $i from 0 through 100 {
+  @if $i % 10 == 0 {
+    .max-w-#{$i}p {
+      max-width: #{$i}#{"%"};
+    }
+  }
+}
+
+@each $width in $pixel-widths {
+  .max-w-#{$width}px {
+    max-width: #{$width}px;
+  }
+}
+
+/* ============================================
+   Height
+   ============================================ */
+
+// Keyword values
+.h-auto {
+  height: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-min {
+  height: min-content;
+}
+
+.h-max {
+  height: max-content;
+}
+
+.h-fit {
+  height: fit-content;
+}
+
+.h-none {
+  height: 0;
+}
+
+// Rem-based height (0.5rem increments, 1-20)
+@for $i from 1 through 20 {
+  .h-#{$i} {
+    height: #{$i * 0.5}rem;
+  }
+}
+
+// Percentage-based height (5% increments)
+@for $i from 0 through 100 {
+  @if $i % 5 == 0 {
+    .h-#{$i}p {
+      height: #{$i}#{"%"};
+    }
+  }
+}
+
+// Viewport height units
+.h-screen-25 {
+  height: 25vh;
+}
+
+.h-screen-50 {
+  height: 50vh;
+}
+
+.h-screen-75 {
+  height: 75vh;
+}
+
+// Pixel-based heights
+@each $height in $pixel-widths {
+  .h-#{$height}px {
+    height: #{$height}px;
+  }
+}
+
+// Min/Max heights
+.min-h-0 {
+  min-height: 0;
+}
+
+.min-h-auto {
+  min-height: auto;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.min-h-min {
+  min-height: min-content;
+}
+
+.min-h-max {
+  min-height: max-content;
+}
+
+.min-h-fit {
+  min-height: fit-content;
+}
+
+@for $i from 1 through 20 {
+  .min-h-#{$i} {
+    min-height: #{$i * 0.5}rem;
+  }
+}
+
+.max-h-none {
+  max-height: none;
+}
+
+.max-h-auto {
+  max-height: auto;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.max-h-min {
+  max-height: min-content;
+}
+
+.max-h-max {
+  max-height: max-content;
+}
+
+.max-h-fit {
+  max-height: fit-content;
+}
+
+@for $i from 1 through 20 {
+  .max-h-#{$i} {
+    max-height: #{$i * 0.5}rem;
+  }
+}
+
+@for $i from 0 through 100 {
+  @if $i % 10 == 0 {
+    .max-h-#{$i}p {
+      max-height: #{$i}#{"%"};
+    }
+  }
+}
+
+/* ============================================
+   Square (Width = Height)
+   ============================================ */
+
+@for $i from 1 through 20 {
+  .square-#{$i} {
+    width: #{$i * 0.5}rem;
+    height: #{$i * 0.5}rem;
+  }
+}
+
+// Common squares
+.square-auto {
+  width: auto;
+  height: auto;
+}
+
+.square-full {
+  width: 100%;
+  height: 100%;
+}
+
+.square-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+// Fraction-based squares
+.square-1\/2 {
+  width: 50%;
+  height: 50%;
+}
+
+.square-1\/3 {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+}
+
+.square-1\/4 {
+  width: 25%;
+  height: 25%;
+}
+
+.square-1\/5 {
+  width: 20%;
+  height: 20%;
+}
+
+/* ============================================
+   Aspect Ratio
+   ============================================ */
+
+.aspect-auto {
+  aspect-ratio: auto;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-3-2 {
+  aspect-ratio: 3 / 2;
+}
+
+.aspect-21-9 {
+  aspect-ratio: 21 / 9;
+}
+
+.aspect-16-10 {
+  aspect-ratio: 16 / 10;
+}
+
+.aspect-2-1 {
+  aspect-ratio: 2 / 1;
+}
+
+.aspect-3-1 {
+  aspect-ratio: 3 / 1;
+}
+
+/* ============================================
+   Size (Width + Height Together)
+   ============================================ */
+
+@for $i from 1 through 20 {
+  .size-#{$i} {
+    width: #{$i * 0.5}rem;
+    height: #{$i * 0.5}rem;
+  }
+}
+
+.size-auto {
+  width: auto;
+  height: auto;
+}
+
+.size-full {
+  width: 100%;
+  height: 100%;
+}
+
+.size-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.size-min {
+  width: min-content;
+  height: min-content;
+}
+
+.size-max {
+  width: max-content;
+  height: max-content;
+}
+
+.size-fit {
+  width: fit-content;
+  height: fit-content;
+}
+
+
+
+/* ============================================
+   Flex Basis (Width for flex items)
+   ============================================ */
+
+.basis-auto {
+  flex-basis: auto;
+}
+
+.basis-full {
+  flex-basis: 100%;
+}
+
+.basis-1\/2 {
+  flex-basis: 50%;
+}
+
+.basis-1\/3 {
+  flex-basis: calc(100% / 3);
+}
+
+.basis-2\/3 {
+  flex-basis: calc(100% / 3 * 2);
+}
+
+.basis-1\/4 {
+  flex-basis: 25%;
+}
+
+.basis-3\/4 {
+  flex-basis: 75%;
+}
+
+.basis-1\/5 {
+  flex-basis: 20%;
+}
+
+.basis-2\/5 {
+  flex-basis: 40%;
+}
+
+.basis-3\/5 {
+  flex-basis: 60%;
+}
+
+.basis-4\/5 {
+  flex-basis: 80%;
+}
+
+.basis-1\/6 {
+  flex-basis: calc(100% / 6);
+}
+
+.basis-5\/6 {
+  flex-basis: calc(100% / 6 * 5);
+}
+
+@for $i from 1 through 20 {
+  .basis-#{$i} {
+    flex-basis: #{$i * 0.5}rem;
+  }
+}
+
+
+
+/* ============================================
+   Container Sizing
+   ============================================ */
+
+.container-size-auto {
+  container-type: normal;
+}
+
+.container-size-inline {
+  container-type: inline-size;
+}
+
+.container-size-size {
+  container-type: size;
+}
+
+/* ============================================
+   Responsive Sizing Utilities
+   ============================================ */
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@each $breakpoint, $min-width in $breakpoints {
+  @media (min-width: $min-width) {
+    // Width
+    .w-#{$breakpoint}-auto {
+      width: auto;
+    }
+
+    .w-#{$breakpoint}-full {
+      width: 100%;
+    }
+
+    .w-#{$breakpoint}-screen {
+      width: 100vw;
+    }
+
+    @for $i from 1 through 20 {
+      .w-#{$breakpoint}-#{$i} {
+        width: #{$i * 0.5}rem;
+      }
+
+      .min-w-#{$breakpoint}-#{$i} {
+        min-width: #{$i * 0.5}rem;
+      }
+
+      .max-w-#{$breakpoint}-#{$i} {
+        max-width: #{$i * 0.5}rem;
+      }
+    }
+
+    // Height
+    .h-#{$breakpoint}-auto {
+      height: auto;
+    }
+
+    .h-#{$breakpoint}-full {
+      height: 100%;
+    }
+
+    .h-#{$breakpoint}-screen {
+      height: 100vh;
+    }
+
+    @for $i from 1 through 20 {
+      .h-#{$breakpoint}-#{$i} {
+        height: #{$i * 0.5}rem;
+      }
+
+      .min-h-#{$breakpoint}-#{$i} {
+        min-height: #{$i * 0.5}rem;
+      }
+
+      .max-h-#{$breakpoint}-#{$i} {
+        max-height: #{$i * 0.5}rem;
+      }
+    }
+
+    // Size (both)
+    .size-#{$breakpoint}-auto {
+      width: auto;
+      height: auto;
+    }
+
+    .size-#{$breakpoint}-full {
+      width: 100%;
+      height: 100%;
+    }
+
+    @for $i from 1 through 20 {
+      .size-#{$breakpoint}-#{$i} {
+        width: #{$i * 0.5}rem;
+        height: #{$i * 0.5}rem;
+      }
+    }
+
+    // Square
+    @for $i from 1 through 20 {
+      .square-#{$breakpoint}-#{$i} {
+        width: #{$i * 0.5}rem;
+        height: #{$i * 0.5}rem;
+      }
+    }
+
+    // Aspect ratio
+    .aspect-#{$breakpoint}-auto {
+      aspect-ratio: auto;
+    }
+
+    .aspect-#{$breakpoint}-square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .aspect-#{$breakpoint}-video {
+      aspect-ratio: 16 / 9;
+    }
+  }
+}
+
+/* ============================================
+   Print Sizing
+   ============================================ */
+
+@media print {
+  // Ensure proper sizing for print
+  .w-screen,
+  .h-screen,
+  .size-screen {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+
+}
+
+/* ============================================
+   Utility Combinations (Common Patterns)
+   ============================================ */
+
+// Full bleed
+.fullbleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+// Center content with max-width
+.container-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Aspect ratio box for images/videos
+.aspect-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Responsive image
+.img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Intrinsic ratio box
+.intrinsic-ratio {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.intrinsic-ratio-16-9::before {
+  padding-bottom: 56.25%;
+}
+
+.intrinsic-ratio-4-3::before {
+  padding-bottom: 75%;
+}
+
+.intrinsic-ratio-1-1::before {
+  padding-bottom: 100%;
+}
+
+.intrinsic-ratio-21-9::before {
+  padding-bottom: 42.857%;
+}
+
+.intrinsic-ratio-3-2::before {
+  padding-bottom: 66.67%;
+}
